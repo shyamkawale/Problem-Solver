@@ -1,0 +1,3 @@
+"iiii" & 1
+"leetcode" & 2
+"zbax" & 2
