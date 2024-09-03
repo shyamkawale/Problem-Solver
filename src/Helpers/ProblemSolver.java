@@ -8,9 +8,10 @@ public abstract class ProblemSolver {
     String outputFilePath;
 
     public ProblemSolver() {
-        String className = this.getClass().getSimpleName();
-        this.inputFilePath = className == "DemoProblem" ? "src/input.txt" : "src/" + className + "/input.txt";
-        this.outputFilePath = className == "DemoProblem" ? "src/output.txt" : "src/" + className + "/output.txt";
+        String packageName = this.getClass().getPackage().getName().replace('.', '/');
+        String baseDir = "src/" + packageName;
+        this.inputFilePath = baseDir + "/input.txt";
+        this.outputFilePath = baseDir + "/output.txt";
     }
 
     public void readInput(){
