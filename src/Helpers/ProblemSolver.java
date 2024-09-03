@@ -39,5 +39,5 @@ public abstract class ProblemSolver {
         }
     }
 
-    public abstract void processParameters(String[] parameters);
+    public abstract void processParameters(String[] args);
 }
