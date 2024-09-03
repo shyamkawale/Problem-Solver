@@ -10,7 +10,7 @@ public class DemoProblem extends ProblemSolver {
     public void processParameters(String[] args) {
         int[] intArray = DataConvertor.toIntArray(args[0]);
         List<Integer> list = DataConvertor.toList(args[0], Integer.class);
-        String string = args[1];
+        String string = DataConvertor.toString(args[1]);
         int intNum = DataConvertor.toInt(args[2]);
         ListNode linkedList = ListWrapper.stringToListNode(args[3]);
         TreeNode tree = TreeWrapper.stringToTreeNode(args[4]);

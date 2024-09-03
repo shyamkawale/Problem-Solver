@@ -93,4 +93,8 @@ public class DataConvertor {
     public static double toDouble(String json){
         return fromJson(json, double.class);
     }
+
+    public static String toString(String json){
+        return fromJson(json, String.class);
+    }
 }
