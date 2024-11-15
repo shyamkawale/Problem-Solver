@@ -15,8 +15,17 @@ public abstract class ProblemSolver {
     }
 
     public void readInput(){
-        File inputFile = new File(this.inputFilePath);
-        File outputFile = new File(this.outputFilePath);
+        File inputFile = null;
+        File outputFile = null;
+        try{
+            System.out.println(this.inputFilePath);
+            System.out.println(this.outputFilePath);
+            inputFile = new File(this.inputFilePath);
+            outputFile = new File(this.outputFilePath);
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
         
 
         try (Scanner scanner = new Scanner(inputFile); PrintStream out = new PrintStream(new FileOutputStream(outputFile))) {
