@@ -13,7 +13,7 @@ Identification:
 public int slidingWindowFixedSize(int[] arr, int winSize) {
     int start = 0;
     int end = 0;
-    for (end < winSize) {
+    for (end < arr.length) {
         // calculations when current window size < winSize
 
         if(end-start+1 == winSize){
