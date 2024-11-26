@@ -1,7 +1,6 @@
 package ToRemember;
 
 import java.util.Arrays;
-import java.util.Stack;
 
 public class ReverseAnArray {
     public static void main(String[] args) {
@@ -9,16 +8,6 @@ public class ReverseAnArray {
 
         reverseArray(0, arr.length - 1, arr);
         System.out.println(Arrays.toString(arr));
-
-        Stack<Integer> stack = new Stack<Integer>();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        stack.push(5);
-        stack.push(6);
-
-        Integer[] nums = (Integer[])stack.toArray();
 
     }
     
