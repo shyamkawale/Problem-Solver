@@ -14,13 +14,17 @@ public int slidingWindowFixedSize(int[] arr, int winSize) {
     int start = 0;
     int end = 0;
     for (end < arr.length) {
-        // calculations when current window size < winSize
+        // some calculations
 
-        if(end-start+1 == winSize){
-            // calculations when current window size == winSize
-            start++;
+        if(end-start+1 < winSize){ // when current window size < winSize
+            end++;
         }
-        end++;
+        else if(end-start+1 == winSize){ //when current window size == winSize
+            // store ans 
+
+            start++; //maintain window
+            end++;
+        }
     }
 }
 ```
@@ -29,20 +33,47 @@ public int slidingWindowFixedSize(int[] arr, int winSize) {
 1. [Maximum Subarray of size k](https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/)
 2. [First Negative in every window of size k](https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1)
 3. [Count Occurrences of anagrams](https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/)
-4. [Maximum of all subarray of size k](https://www.interviewbit.com/problems/sliding-window-maximum/)
+4. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum)
 5. [Maximum Number of Occurrences of a Substring](https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring)
 
 ## 2. Variable Size Window
 
 ### Variable Size Window Description:
-Given:
-Identification:
+Given: 1) array/string 2) condition
+Identification: 
 
 ### Template:
 ```java
+public int slidingWindowVariableSize(int[] arr, int cond) {
+    int start = 0;
+    int end = 0;
+    for (end < arr.length) {
+        // some calculations
+
+        if(sum < cond){ // when sum < cond
+            end++;
+        }
+        else if(sum == cond){ // when sum == cond
+            // store ans
+            end++;
+        }
+        else if(sum > cond){ // when sum > cond
+            while(sum > cond){ 
+                // remove some content of window from start till sum <= cond
+                start++;
+            }
+            end++;
+        }
+    }
+}
 ```
 
 ### Problems 
-1. []()
+1. [Longest Substring with K Uniques](https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1)
+2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
+3. [Fruits into Baskets](https://leetcode.com/problems/fruit-into-baskets)
+4. [Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray)
+5. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring)
+
 
 
