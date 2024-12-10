@@ -68,9 +68,13 @@ public class BasicMaths{
         int[] array = new int[]{1,2,3,4,5,6,7};
         int len = array.length; // buffer size
         int currentIndex = 6;
+        // to move front
         int index = (currentIndex + 1) % len; // Move to the next index, wrap around when it reaches the end
-        System.out.println("For array with len 7, next index after 6 is "+index);
+        System.out.println("For array with len 7, next index after 6 is "+index); // 0
         System.out.println();
+        // to move back
+        index = (currentIndex - 1 + len) % len; // Move to previous index
+        System.out.println("For array with len 7, prev index after 0 is "+index); // 6
 
         //Handling Large Numbers in Modular Arithmetic
         //When dealing with very large numbers, to avoid overflow or work within specific constraints, modular arithmetic is often used
