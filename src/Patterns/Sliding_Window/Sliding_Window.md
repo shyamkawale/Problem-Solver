@@ -8,6 +8,18 @@ The sliding window pattern is an efficient technique used to solve problems that
 Given: 1) array/string 2) window-Size
 Identification: 
 
+### BruteForce to Fixed Sliding Window
+```java
+// find all window of size k
+public int bruteforce(int[] arr, int winSize){
+    for(int start=0; start<arr.length-winSize+1; start++){
+        for(int end=start; end<start+winSize; end++){
+            // some calculation
+        }
+        //store answer
+    }
+}
+```
 ### Template:
 ```java
 public int slidingWindowFixedSize(int[] arr, int winSize) {
@@ -22,6 +34,7 @@ public int slidingWindowFixedSize(int[] arr, int winSize) {
         else if(end-start+1 == winSize){ //when current window size == winSize
             // store ans 
 
+            //remove start from data-structure(queue, hashmap, freqArr, count*)
             start++; //maintain window
             end++;
         }
@@ -30,11 +43,13 @@ public int slidingWindowFixedSize(int[] arr, int winSize) {
 ```
 
 ### Problems 
-1. [Maximum Subarray of size k](https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/)
-2. [First Negative in every window of size k](https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1)
-3. [Count Occurrences of anagrams](https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/)
-4. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum)
+1. [Maximum Sum of Distinct Subarrays of Size K](https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/)
+2. [First Negative in Every Window of Size k](https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1)
+3. [Count Occurrences of anagrams](https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1)
+4. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum) **
 5. [Maximum Number of Occurrences of a Substring](https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring)
+6. [Maximum Points You Can Obtain from Cards](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards)
+
 
 ## 2. Variable Size Window
 
