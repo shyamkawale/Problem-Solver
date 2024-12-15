@@ -2,6 +2,7 @@ package Maths.BasicMaths;
 
 import java.util.Arrays;
 
+@SuppressWarnings("unused")
 public class BasicMaths{
 
     public static void main(String[] args) {
