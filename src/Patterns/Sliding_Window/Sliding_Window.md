@@ -68,27 +68,42 @@ public int slidingWindowVariableSize(int[] arr, int cond) {
         if(sum < cond){ // when sum < cond
             end++;
         }
-        else if(sum == cond){ // when sum == cond
+        else if(sum == cond){ // when sum == cond (VALID WINDOW)
             // store ans
             end++;
         }
-        else if(sum > cond){ // when sum > cond
+        else if(sum > cond){ // when sum > cond(no scope going forward)
             while(sum > cond){ 
                 // remove some content of window from start till sum <= cond
                 start++;
             }
-            end++;
+            // end++;
+            // OR
+            // remove end to reevaluate window as after removing start(s) we have become sum == cond
+
         }
     }
 }
 ```
 
 ### Problems 
+#### Find Maximum Subarray
 1. [Longest Substring with K Uniques](https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1)
-2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
-3. [Fruits into Baskets](https://leetcode.com/problems/fruit-into-baskets)
-4. [Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray)
-5. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring)
+2. [Fruits into Baskets](https://leetcode.com/problems/fruit-into-baskets)
+3. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters) **(only2condition with little variation)
+4. [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii)
+5. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement)
+6. [Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray) ** same-same but different
+
+#### Find Minimum Subarray
+7. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring)
+
+#### Count all valid subarray
+7. [Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays)
+8. [Binary Subarrays With Sum](https://leetcode.com/problems/binary-subarrays-with-sum)
+10. [Number of Substrings Containing All Three Characters](https://leetcode.com/problems/number-of-substrings-containing-all-three-characters)
+
+
 
 
 

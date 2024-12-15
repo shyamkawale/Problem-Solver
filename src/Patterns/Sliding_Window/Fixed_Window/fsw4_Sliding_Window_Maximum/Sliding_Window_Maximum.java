@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Fixed_Window.Sliding_Window_Maximum;
+package Patterns.Sliding_Window.Fixed_Window.fsw4_Sliding_Window_Maximum;
 
 import java.util.*;
 

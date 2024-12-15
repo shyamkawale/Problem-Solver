@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Fixed_Window.Maximum_Sum_of_Distinct_Subarrays_of_Size_K; 
+package Patterns.Sliding_Window.Fixed_Window.fsw1_Maximum_Sum_of_Distinct_Subarrays_of_Size_K; 
  
 import java.util.HashMap;
 import java.util.Map;

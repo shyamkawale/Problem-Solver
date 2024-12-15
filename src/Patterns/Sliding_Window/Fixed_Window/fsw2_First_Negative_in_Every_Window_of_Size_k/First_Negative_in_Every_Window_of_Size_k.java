@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Fixed_Window.First_Negative_in_Every_Window_of_Size_k; 
+package Patterns.Sliding_Window.Fixed_Window.fsw2_First_Negative_in_Every_Window_of_Size_k; 
  
 import java.util.*;
 

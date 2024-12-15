@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Fixed_Window.Maximum_Points_You_Can_Obtain_from_Cards; 
+package Patterns.Sliding_Window.Fixed_Window.fsw6_Maximum_Points_You_Can_Obtain_from_Cards; 
  
 import Helpers.DataConvertor; 
 import Helpers.ProblemSolver; 

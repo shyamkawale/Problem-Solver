@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Fixed_Window.Count_Occurences_of_Anagrams;
+package Patterns.Sliding_Window.Fixed_Window.fsw3_Count_Occurences_of_Anagrams;
 
 import java.util.Arrays;
 

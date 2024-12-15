@@ -1,0 +1,3 @@
+"aabacbebebe" & 3
+"aaaa" & 2
+"aabaaab" & 2

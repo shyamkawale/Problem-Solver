@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Fixed_Window.Maximum_Number_of_Occurrences_of_a_Substring;
+package Patterns.Sliding_Window.Fixed_Window.fsw5_Maximum_Number_of_Occurrences_of_a_Substring;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,0 +1,4 @@
+"ABAB" & 2
+"AABABBA" & 1
+"BABC" & 2
+"AAAB" & 0
