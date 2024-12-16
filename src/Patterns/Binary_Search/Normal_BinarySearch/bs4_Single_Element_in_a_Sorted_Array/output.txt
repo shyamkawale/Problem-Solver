@@ -1,0 +1,4 @@
+single Non Duplicate element: 2 at index: 2
+***********************************
+single Non Duplicate element: 10 at index: 4
+***********************************

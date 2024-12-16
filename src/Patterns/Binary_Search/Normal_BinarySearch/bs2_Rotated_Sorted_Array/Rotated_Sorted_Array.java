@@ -1,37 +1,38 @@
-package Patterns.Binary_Search.Normal_BinarySearch;
-
-import Helpers.Models.BinarySearchResult;
-
-public class bs2_Rotated_Sorted_Array{
-
-    public static void main(String[] args) {
-        /*
-         * [4,5,6,7,8,0,1,2] & 5
-            [1,0,1,1,1] & 0
-            [16, 18, 22, 23, 24, 36, 43, 1, 2] & 2
-            [1,1,2,3,3,4,4,8,8] & -1
-         */
-        // int[] arr1 = {5, 5, 5, 5, 5, 5};
-        int[] arr1 = {4, 4, 5, 5, 5, 5, 6, 7, 8, 8, 1, 1, 2, 3, 3, 4, 4};
-        //    index:  0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16
-        int k = 5;
-
-        BinarySearchResult targetResult = findTarget(arr1, k);
+package Patterns.Binary_Search.Normal_BinarySearch.bs2_Rotated_Sorted_Array; 
+ 
+import Helpers.DataConvertor;
+import Helpers.ProblemSolver;
+import Helpers.Models.BinarySearchResult; 
+ 
+public class Rotated_Sorted_Array extends ProblemSolver { 
+    public static void main(String[] args) { 
+        new Rotated_Sorted_Array().readInput(); 
+    } 
+ 
+    @Override 
+    public void processParameters(String[] args) { 
+        //  int[] arr = {4, 4, 5, 5, 5, 5, 6, 7, 8, 8, 1, 1, 2, 3, 3, 4, 4};
+        //       index:  0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16
+        int[] arr = DataConvertor.toIntArray(args[0]); 
+        int k = DataConvertor.toInt(args[1]);
+ 
+        BinarySearchResult targetResult = findTarget(arr, k);
         System.out.println("index of target "+k+" is: "+targetResult.index);
 
-        BinarySearchResult firstTargetResult = findFirstTarget(arr1, k);
+        BinarySearchResult firstTargetResult = findFirstTarget(arr, k);
         System.out.println("index of first occurence of target "+k+" is: "+firstTargetResult.index);
 
-        BinarySearchResult lastTargetResult = findLastTarget(arr1, k);
+        BinarySearchResult lastTargetResult = findLastTarget(arr, k);
         System.out.println("index of last occurence of target "+k+" is: "+lastTargetResult.index);
 
-        BinarySearchResult minElem = findMin(arr1);
+        BinarySearchResult minElem = findMin(arr);
         System.out.println("smallest elem is: "+ minElem.res + " at index: "+minElem.index);
 
-        int res = findKRotation(arr1);                    
+        // Works only with distinct array
+        int res = findKRotation(arr);                    
         System.out.println("rotation done on this array: "+res);
-    }
-
+    } 
+ 
     private static BinarySearchResult findTarget(int[] arr, int k) {
         int left = 0;
         int right = arr.length-1;
@@ -133,11 +134,12 @@ public class bs2_Rotated_Sorted_Array{
         return new BinarySearchResult(k, index);
     }
 
+    //Works only with distinct array (OR gives first min element in an array incase of duplicates)
     private static BinarySearchResult findMin(int[] arr){
         int left = 0;
         int right = arr.length-1;
-        int minElem = arr[0];
-        int index = 0;
+        int minElem = Integer.MAX_VALUE;
+        int index = -1;
         while(left <= right){
             int mid = left + (int)Math.floor((right-left)/2);
 
@@ -149,7 +151,7 @@ public class bs2_Rotated_Sorted_Array{
                 left = mid+1;
             }
             else{ //right is sorted
-                if(arr[mid] < minElem){ // finding min of arr[left] , minElem
+                if(arr[mid] < minElem){ // finding min of arr[mid] , minElem
                     minElem = arr[mid];
                     index = mid;
                 }
@@ -159,6 +161,7 @@ public class bs2_Rotated_Sorted_Array{
         return new BinarySearchResult(minElem, index);
     }
 
+    // works only with distinct array
     public static int findKRotation(int[] arr) {
         int left = 0;
         int right = arr.length-1;
@@ -184,5 +187,5 @@ public class bs2_Rotated_Sorted_Array{
         }
         return index;
     }
-
-}
+ 
+} 
