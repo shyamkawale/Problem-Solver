@@ -63,9 +63,12 @@ int res = binarySearch(arr, 5, 0, arr.length-1);
 1. [Square root of number in logn](https://leetcode.com/problems/sqrtx)
 2. [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas)
 3. [Minimum days to make M bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets)
-4. [Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold)
+4. [Aggressive Cows](https://takeuforward.org/data-structure/aggressive-cows-detailed-solution/) 
 5. [Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days)
-6. []()
+6. [Allocate Books](https://www.naukri.com/code360/problems/allocate-books_1090540)
+
+Other very similar questions:
+1. [Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold)
 
 ``` java
 public int binarySearchOnAnswer(int[] nums, int k) {
@@ -91,3 +94,8 @@ public int binarySearchOnAnswer(int[] nums, int k) {
 ```
 
 ### Set 3 - BS on 2D array
+1. [Search in a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)
+2. [Search in a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)
+3. [Row With Max 1s](https://www.geeksforgeeks.org/problems/row-with-max-1s0023/1?)
+4. [Find a Peak Element in Matrix](https://leetcode.com/problems/find-a-peak-element-ii/)
+
