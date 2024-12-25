@@ -102,6 +102,7 @@ public int slidingWindowVariableSize(int[] arr, int cond) {
 7. [Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays)
 8. [Binary Subarrays With Sum](https://leetcode.com/problems/binary-subarrays-with-sum)
 10. [Number of Substrings Containing All Three Characters](https://leetcode.com/problems/number-of-substrings-containing-all-three-characters)
+11. [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers)
 
 
 
