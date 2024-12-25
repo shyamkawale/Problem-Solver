@@ -90,6 +90,7 @@ for(int i=left; i<= right; i++){
 }
 ```
 
+#### Binary Search Approach
 ``` java
 public int binarySearchOnAnswer(int[] nums, int k) {
     int left = min; // min possible answer
@@ -125,9 +126,9 @@ private boolean isAnswerPossible(int[] nums, int mid, int k){
 3. [Row With Max 1s](https://www.geeksforgeeks.org/problems/row-with-max-1s0023/1?) - BS on each ROW
 4. [Find a Peak Element in Matrix](https://leetcode.com/problems/find-a-peak-element-ii/) - Greedy Approach, BS on COL(eliminating half columns)
 
-####Identification
+#### Identification
 Sorted rows/ Sorted Columns
 
-####Bruteforce
+#### Bruteforce
 Traverse through all elements => TC: O(row*col)
 
