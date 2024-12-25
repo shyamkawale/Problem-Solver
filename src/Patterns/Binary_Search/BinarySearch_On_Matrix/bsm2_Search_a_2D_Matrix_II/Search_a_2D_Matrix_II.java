@@ -26,7 +26,7 @@ Output: false
 
 Concept: BinarySearch on Matrix
 Sol1: BinarySearch On each ROW* => row*log(col)
-Sol2: BinarySearch(without MID) variation On MATRIX** => log(row + col); 🚀
+Sol2: BinarySearch variation On ROWwise and COLwise sorted MATRIX** => log(row + col); 🚀
  */
 public class Search_a_2D_Matrix_II extends ProblemSolver { 
     public static void main(String[] args) { 
