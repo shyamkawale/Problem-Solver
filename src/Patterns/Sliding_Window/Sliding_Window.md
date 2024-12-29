@@ -97,6 +97,7 @@ public int slidingWindowVariableSize(int[] arr, int cond) {
 
 #### Find Minimum Subarray
 7. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring)
+12. [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum) => only for positive numbers
 
 #### Count all valid subarray
 7. [Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays)
