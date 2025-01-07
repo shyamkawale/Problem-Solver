@@ -35,12 +35,8 @@ public class Design6_LRU_Cache {
             Node curr = firstElem;
             while(curr != null){
                 if(curr.key == key){
-                    if(lastElem == curr){
-                        return curr.val;
-                    }
-
                     removeNodeFromList(curr, prevNode);
-                    pushNodeAtEnd(curr);
+                    addNodeToList(curr, lastElem);
 
                     return curr.val;
                 }
@@ -57,12 +53,8 @@ public class Design6_LRU_Cache {
             while(curr != null){
                 if(curr.key == key){
                     curr.val = value;
-                    if(lastElem == curr){
-                        return;
-                    }
-
                     removeNodeFromList(curr, prevNode);
-                    pushNodeAtEnd(curr);
+                    addNodeToList(curr, lastElem);
                     return;
                 }
                 prevNode = curr;
@@ -72,47 +64,63 @@ public class Design6_LRU_Cache {
             // if no element found then push new node.
             Node newNode = new Node(key, value);
             if(size < capacity){
-                pushNodeAtEnd(newNode);
-                size++;
+                addNodeToList(newNode, lastElem);
             }
             else{ 
                 // remove LRU element(start element)
                 Node LRUElem = firstElem;
-                if(firstElem == lastElem){
-                    firstElem = null;
-                    lastElem = null;
-                }
-                else{
-                    firstElem = firstElem.next;
-                }
-                LRUElem.next = null;
+                removeNodeFromList(LRUElem, null);
 
                 // pushing at end
-                pushNodeAtEnd(newNode);
+                addNodeToList(newNode, lastElem);
             }
         }
 
         private void removeNodeFromList(Node currNode, Node prevNode){
-            // remove currElem from cache
-            if(firstElem == currNode){
-                firstElem = currNode.next;
+            if(firstElem == null || currNode == null){ // if list is empty or currNode is null
+                return;
             }
-            else{
+
+            if(firstElem == currNode){ // if currNode is the firstElem
+                firstElem = firstElem.next;
+                if(firstElem == null){ // only single Element was there.
+                    lastElem = null;
+                }
+            }
+            else{ // currNode is in middle or end
                 prevNode.next = currNode.next;
+                if(currNode == lastElem){ // currNode is the lastElem
+                    lastElem = prevNode;
+                }
             }
-            currNode.next = null;
+
+            currNode.next = null; // remove unwanted next reference for currNode
+
+            size--;
         }
 
-        private void pushNodeAtEnd(Node currNode){
-            // push currElem in end
-            if(firstElem == null && lastElem == null){
-                firstElem  = currNode;
-                lastElem = currNode;
+        private void addNodeToList(Node newNode, Node prevNode){
+            if(newNode == null){ // if newNode is null
+                return;
             }
-            else{
-                lastElem.next = currNode;
-                lastElem = currNode;
+            
+            if(firstElem == null){ // if list is empty(it doesnot matter where we are adding newNode)
+                firstElem  = newNode;
+                lastElem = newNode;
             }
+            else if(prevNode == null){ // newNode to be added at start
+                newNode.next = firstElem;
+                firstElem = newNode;
+            }
+            else{ // newNode to be added at middle
+                newNode.next = prevNode.next;
+                prevNode.next = newNode;
+                if(prevNode == lastElem){ // newNode to be added at last
+                    lastElem = newNode;
+                }
+            }
+
+            size++;
         }
     }
 
