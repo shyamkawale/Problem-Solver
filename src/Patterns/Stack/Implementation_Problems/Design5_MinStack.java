@@ -7,7 +7,7 @@ public class Design5_MinStack {
 
     // SC:
     // 1) for stack O(n) => this is required as we are designing stack
-    // 2) for maintaining MinElem O(n) => minStack
+    // 2) for maintaining MinElem on top O(n) => minStack
     class MinStackUsing2Stack<E extends Comparable<E>> {
         Deque<E> stack;
         Deque<E> minStack;
@@ -19,7 +19,7 @@ public class Design5_MinStack {
 
         public void push(E val) {
             stack.push(val);
-            if (minStack.isEmpty() || minStack.peek().compareTo(val) >= 1) {
+            if (minStack.isEmpty() || minStack.peek().compareTo(val) > 0) {
                 minStack.push(val);
             }
         }
@@ -104,7 +104,8 @@ public class Design5_MinStack {
             if (stack.isEmpty()) {
                 minElem = currElem;
                 stack.push(currElem);
-            } else {
+            }
+            else {
                 if (currElem < minElem) { // modify top as currElem < minElem
                     int hash = getHash(currElem, minElem);
                     stack.push(hash);
@@ -128,7 +129,7 @@ public class Design5_MinStack {
             stack.pop();
         }
 
-        public Integer top() {
+        public int top() {
             int topElem = stack.peek();
             if(topElem < minElem){ // modified(hashed) top
                 return minElem;
@@ -136,7 +137,7 @@ public class Design5_MinStack {
             return topElem;
         }
 
-        public Integer getMin() {
+        public int getMin() {
             return minElem;
         }
     }
