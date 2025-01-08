@@ -5,6 +5,11 @@ import java.util.Stack;
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver; 
  
+/*
+https://leetcode.com/problems/valid-parentheses
+
+Check if string is valid parenthesis
+ */
 public class Check_Balanced_Paranthesis extends ProblemSolver { 
     public static void main(String[] args) { 
         new Check_Balanced_Paranthesis().readInput(); 
@@ -18,6 +23,8 @@ public class Check_Balanced_Paranthesis extends ProblemSolver {
         System.out.println(res); 
     } 
  
+    //TC: O(n)
+    //SC: O(n)
     public boolean isBalancedParanthesis(String s) {
         if(s.length() == 1)return false;
         Stack<Character> stack = new Stack<>();
