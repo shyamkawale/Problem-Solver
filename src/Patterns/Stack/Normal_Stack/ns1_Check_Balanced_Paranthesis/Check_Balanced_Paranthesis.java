@@ -1,4 +1,4 @@
-package Patterns.Stack.Normal_Problems.Check_Balanced_Paranthesis; 
+package Patterns.Stack.Normal_Stack.ns1_Check_Balanced_Paranthesis; 
  
 import java.util.Stack;
 

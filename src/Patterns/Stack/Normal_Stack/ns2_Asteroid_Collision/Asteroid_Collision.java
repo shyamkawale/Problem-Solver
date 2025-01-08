@@ -1,4 +1,4 @@
-package Patterns.Stack.Normal_Problems.Asteroid_Collision; 
+package Patterns.Stack.Normal_Stack.ns2_Asteroid_Collision; 
  
 import java.util.ArrayDeque;
 import java.util.ArrayList;
