@@ -2,7 +2,7 @@ import java.util.*;
 
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
-import Helpers.DataStructure.LinkedList.*;
+import Helpers.DataStructure.SinglyLinkedList.*;
 import Helpers.DataStructure.Trees.*;
 
 public class DemoProblem extends ProblemSolver {
