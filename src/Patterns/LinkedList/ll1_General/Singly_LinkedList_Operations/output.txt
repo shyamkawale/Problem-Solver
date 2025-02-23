@@ -1,0 +1,32 @@
+Original List:
+1->2->3->4->5
+Length of List: 5
+Reversed Between 2 and 5: 
+1->5->4->3->2
+Adding 7 at 2nd position: 
+7->1->5->4->3->2
+Adding 10 at last Position: 
+7->1->5->4->3->2->10
+Remove Element at 1st position: 
+7->1->5->4->3->2->10
+Remove Last Element: 
+7->1->5->4->3->2
+7->1->5->4->3->2->1
+Remove 1 from List
+7->5->4->3->2
+Remove 3th node from last: 
+7->5->3->2
+Reversed List1: 
+2->3->5->7
+Reversed List2: 
+7->5->3->2
+Reversed List3: 
+2->3->5->7
+Rotated List 3 times Right: 
+3->5->7->2
+Rotated List 3 times Left: 
+2->3->5->7
+Is List Palindrome: false
+Sorted List: 
+2->3->5
+***********************************

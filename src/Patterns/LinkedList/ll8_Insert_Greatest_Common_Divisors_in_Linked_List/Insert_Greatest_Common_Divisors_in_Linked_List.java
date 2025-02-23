@@ -1,8 +1,8 @@
-package LinkedList.Insert_Greatest_Common_Divisors_in_Linked_List;
+package Patterns.LinkedList.ll8_Insert_Greatest_Common_Divisors_in_Linked_List;
 
 import Helpers.ProblemSolver;
-import Helpers.DataStructure.LinkedList.ListNode;
-import Helpers.DataStructure.LinkedList.ListWrapper;
+import Helpers.DataStructure.SinglyLinkedList.ListNode;
+import Helpers.DataStructure.SinglyLinkedList.ListWrapper;
 
 /* 
 https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list
@@ -12,7 +12,11 @@ Between every pair of adjacent nodes, insert a new node with a value equal to th
 
 Return the linked list after insertion.
 
-The greatest common divisor of two numbers is the largest positive integer that evenly divides both numbers.
+Input: head = [18,    6,    10,    3]
+Output:       [18, 6, 6, 2, 10, 1, 3]
+
+Input: head = [7]
+Output:       [7]
  */
 public class Insert_Greatest_Common_Divisors_in_Linked_List extends ProblemSolver{
     @Override
@@ -60,14 +64,4 @@ public class Insert_Greatest_Common_Divisors_in_Linked_List extends ProblemSolve
         }
         return a;
     }
-
-    // 💡recursive GCD algo 
-    // TC => O(log(min(a,b))), 
-    // SC => O(log(min(a, b))) because each recursive call adds a new frame to the call stack, and the recursion depth is logarithmic in the size of the smaller number.
-    // private int getGCD(int a, int b){
-    //     if (b == 0) {
-    //         return a;
-    //     }
-    //     return getGCD(b, a % b);
-    // }
 }

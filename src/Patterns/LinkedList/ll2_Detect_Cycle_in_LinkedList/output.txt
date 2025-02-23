@@ -1,0 +1,12 @@
+HasCycle: true true
+StartNode: 2
+Cyclelength: 4 4
+***********************************
+HasCycle: true true
+StartNode: 2
+Cyclelength: 4 4
+***********************************
+HasCycle: true true
+StartNode: 2
+Cyclelength: 4 4
+***********************************

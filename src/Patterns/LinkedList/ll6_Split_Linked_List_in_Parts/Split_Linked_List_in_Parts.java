@@ -1,9 +1,9 @@
-package LinkedList.Split_Linked_List_in_Parts;
+package Patterns.LinkedList.ll6_Split_Linked_List_in_Parts;
 
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
-import Helpers.DataStructure.LinkedList.ListNode;
-import Helpers.DataStructure.LinkedList.ListWrapper;
+import Helpers.DataStructure.SinglyLinkedList.ListNode;
+import Helpers.DataStructure.SinglyLinkedList.ListWrapper;
 
 /* 
 https://leetcode.com/problems/split-linked-list-in-parts/description
@@ -15,9 +15,18 @@ This may lead to some parts being null.
 The parts should be in the order of occurrence in the input list, and parts occurring earlier should always have a size greater than or equal to parts occurring later.
 
 Return an array of the k parts. 
+
+Input: head = [1,2,3], k = 5
+Output: [[1],[2],[3],[],[]]
+
+Input: head = [1,2,3,4,5,6,7,8,9,10], k = 3
+Output: [[1,2,3,4],[5,6,7],[8,9,10]]
 */
 public class Split_Linked_List_in_Parts extends ProblemSolver {
-
+    public static void main(String[] args) {
+        new Split_Linked_List_in_Parts().readInput();
+    }
+    
     @Override
     public void processParameters(String[] args) {
         ListNode head = ListWrapper.stringToListNode(args[0]);
@@ -28,11 +37,6 @@ public class Split_Linked_List_in_Parts extends ProblemSolver {
             ListWrapper.prettyPrintLinkedList(listNode);
         }
     }
-
-    public static void main(String[] args) {
-        new Split_Linked_List_in_Parts().readInput();
-    }
-
 
     // 🏆 Crucial Thinking => Spliting N elements in k parts => 
     // If there are N elements in the list, and k parts to split, then every part has N/k elements, except the first N%k parts have an extra one.
