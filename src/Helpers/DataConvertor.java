@@ -62,6 +62,10 @@ public class DataConvertor {
         return fromJson(json, int[].class);
     }
 
+    public static long[] toLongArray(String json) {
+        return fromJson(json, long[].class);
+    }
+
     public static char[] toCharArray(String json){
         return fromJson(json, char[].class);
     }

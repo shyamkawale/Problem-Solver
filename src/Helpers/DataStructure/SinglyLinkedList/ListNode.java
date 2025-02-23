@@ -1,4 +1,4 @@
-package Helpers.DataStructure.LinkedList;
+package Helpers.DataStructure.SinglyLinkedList;
 
 public class ListNode {
     public int val;
