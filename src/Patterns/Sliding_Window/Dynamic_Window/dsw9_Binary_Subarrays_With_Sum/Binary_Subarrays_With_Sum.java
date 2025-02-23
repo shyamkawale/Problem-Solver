@@ -1,5 +1,8 @@
 package Patterns.Sliding_Window.Dynamic_Window.dsw9_Binary_Subarrays_With_Sum; 
  
+import java.util.HashMap;
+import java.util.Map;
+
 import Helpers.DataConvertor; 
 import Helpers.ProblemSolver; 
  
@@ -23,6 +26,9 @@ Output: 15
 
 Concept: Sliding Window(Count All Valid Windows)
 Return: Total Count of all Valid Windows
+
+Approach2: Two Pass Sliding window
+Approach3: PrefixSum
  */
 public class Binary_Subarrays_With_Sum extends ProblemSolver { 
  
@@ -35,11 +41,12 @@ public class Binary_Subarrays_With_Sum extends ProblemSolver {
         int[] nums = DataConvertor.toIntArray(args[0]); 
         int k = DataConvertor.toInt(args[1]);
  
-        int res = numSubarraysWithSum(nums, k); 
-        System.out.println(res); 
+        int res1 = numSubarraysWithSum_usingSlidingWin(nums, k); 
+        int res3 = numSubarraysWithSum_usingPrefixSum(nums, k);
+        System.out.println(res1 + " " + res3); 
     } 
  
-    private int numSubarraysWithSum(int[] nums, int k) {
+    private int numSubarraysWithSum_usingSlidingWin(int[] nums, int k) {
         int start = 0;
         int end = 0;
         int niceSubArrCnt = 0;
@@ -74,6 +81,31 @@ public class Binary_Subarrays_With_Sum extends ProblemSolver {
         }
 
         return niceSubArrCnt;
+    }
+
+    // Using Prefix Sum Approach
+    // TC: O(n)
+    // SC: O(n + n)
+    public int numSubarraysWithSum_usingPrefixSum(int[] nums, int sum) {
+        int n = nums.length;
+        int[] P = new int[n+1];
+        for(int i=0; i<n; i++){
+            P[i+1] = P[i] + nums[i];
+        }
+        
+        int subArrCnt = 0;
+        Map<Integer, Integer> freqMap = new HashMap<Integer, Integer>();
+
+        // P[start] = P[end] - sum
+        for(int ps : P){
+            // ps as endElem
+            subArrCnt = subArrCnt + freqMap.getOrDefault(ps - sum, 0);
+
+            // ps as startElem
+            freqMap.put(ps, freqMap.getOrDefault(ps, 0)+1);
+        }
+        
+        return subArrCnt;
     }
  
 } 

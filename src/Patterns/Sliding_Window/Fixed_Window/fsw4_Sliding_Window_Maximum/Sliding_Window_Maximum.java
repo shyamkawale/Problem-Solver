@@ -23,8 +23,9 @@ Window position                Max
  1  3  -1  -3  5 [3  6  7]      7
 
 
-Approach1: Using Priority Queue(maxheap)
-Approach2: Using Deque why??
+BruteForce: Finding substrings of length k for every element and finding max element of it. => TC: O(n*k)
+Approach2: Using Priority Queue(maxheap) => TC: O(n*logn)
+Approach3: Using Deque => TC: O(n) 🚀
  */
 public class Sliding_Window_Maximum extends ProblemSolver {
     public static void main(String[] args) {
@@ -41,7 +42,9 @@ public class Sliding_Window_Maximum extends ProblemSolver {
         System.out.println(Arrays.toString(res1) + " " + Arrays.toString(res2));
     }
 
-    //Using PriorityQueue
+    // Using PriorityQueue
+    // TC: O(n*logn) logn for priorityQueue add() and remove() methods
+    // SC: O(n)
     public int[] slidingMaximum_UsingPriorityQueue(final int[] arr, int k) {
         int len = arr.length;
         int[] res = new int[len - k + 1];
@@ -67,6 +70,9 @@ public class Sliding_Window_Maximum extends ProblemSolver {
         return res;
     }
 
+    // Using Deque(Double Ended Queue)
+    // TC: O(n)
+    // SC: O(logn)
     public int[] slidingMaximum_UsingDeque(int[] arr, int k) {
         int len = arr.length;
         int[] res = new int[len - k + 1];

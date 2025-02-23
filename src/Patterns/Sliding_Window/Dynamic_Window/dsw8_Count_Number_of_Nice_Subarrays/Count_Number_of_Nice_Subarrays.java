@@ -22,6 +22,9 @@ Output: 16
 
 Concept: Sliding Window(Count All Valid Windows)
 Return: Total Count of all Valid Windows
+
+Approach 2: Prefix sum?? what if -ve elements (#TODO 📅)
+
  */
 public class Count_Number_of_Nice_Subarrays extends ProblemSolver { 
  
