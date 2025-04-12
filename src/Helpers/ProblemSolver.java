@@ -36,7 +36,9 @@ public abstract class ProblemSolver {
                 String[] inputLine = Arrays.stream(scanner.nextLine().trim().split("&"))
                     .map(String::trim)
                     .toArray(String[]::new);
-                this.processParameters(inputLine);
+                
+                ProblemSolver solver = this.getClass().getDeclaredConstructor().newInstance();
+                solver.processParameters(inputLine);
                 System.out.println("***********************************");
             }
 

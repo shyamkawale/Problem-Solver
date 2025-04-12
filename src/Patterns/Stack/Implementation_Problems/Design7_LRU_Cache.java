@@ -3,21 +3,21 @@ package Patterns.Stack.Implementation_Problems;
 import java.util.HashMap;
 import java.util.Map;
 
-// initial LRU Cache ( with singly linked list and O(n) TC)
-public class Design6_LRU_Cache {
+public class Design7_LRU_Cache {
+    public static class Node{
+        public int key;
+        public int val;
+        public Node next;
+        public Node prev;
 
-    public static class My_LRUCache{
-        public static class Node{
-            public int key;
-            public int val;
-            public Node next;
-    
-            public Node(int key, int val) {
-                this.key = key;
-                this.val = val;
-                this.next = null;
-            }
+        public Node(int key, int val) {
+            this.key = key;
+            this.val = val;
+            this.next = null;
+            this.prev = null;
         }
+    }
+    public static class My_LRUCache{
         int capacity;
 
         Node firstElem;
@@ -38,18 +38,8 @@ public class Design6_LRU_Cache {
                 return -1;
             }
 
-            Node prevNode = null;
-            Node curr = firstElem;
-            while(curr != null){
-                if(curr == node){
-                    removeNodeFromList(curr, prevNode);
-                    addNodeToList(curr, lastElem);
-
-                    break;
-                }
-                prevNode = curr;
-                curr = curr.next;
-            }
+            removeNodeFromList(node);
+            addNodeToList(node, lastElem);
 
             return node.val;
         }
@@ -58,42 +48,33 @@ public class Design6_LRU_Cache {
             //traverse if we get element with same key
             Node node = cache.get(key);
 
-            Node prevNode = null;
-            Node curr = firstElem;
             if(node != null){
-                while(curr != null){
-                    if(curr.key == key){
-                        curr.val = value;
-                        removeNodeFromList(curr, prevNode);
-                        addNodeToList(curr, lastElem);
-                        break;
-                    }
-                    prevNode = curr;
-                    curr = curr.next;
+                node.val = value;
+                removeNodeFromList(node);
+                addNodeToList(node, lastElem);
+            }
+            else{
+                // if no element found then push new node.
+                Node newNode = new Node(key, value);
+                if(cache.size() < capacity){
+                    addNodeToList(newNode, lastElem);
                 }
-                return;
-            }
-            
-            // if no element found then push new node.
-            Node newNode = new Node(key, value);
-            if(cache.size() < capacity){
-                addNodeToList(newNode, lastElem);
-            }
-            else{ 
-                // remove LRU element(start element)
-                Node LRUElem = firstElem;
-                removeNodeFromList(LRUElem, null);
+                else{ 
+                    // remove LRU element(start element)
+                    int lRUKey = firstElem.key;
+                    removeNodeFromList(firstElem);
 
-                // pushing at end
-                addNodeToList(newNode, lastElem);
+                    // pushing at end
+                    addNodeToList(newNode, lastElem);
 
-                cache.remove(LRUElem.key);
+                    cache.remove(lRUKey);
+                }
+
+                cache.put(key, newNode);
             }
-
-            cache.put(key, newNode);
         }
 
-        private void removeNodeFromList(Node currNode, Node prevNode){
+        private void removeNodeFromList(Node currNode){
             if(firstElem == null || currNode == null){ // if list is empty or currNode is null
                 return;
             }
@@ -103,15 +84,23 @@ public class Design6_LRU_Cache {
                 if(firstElem == null){ // only single Element was there.
                     lastElem = null;
                 }
+                else{ //
+                    firstElem.prev = null;
+                }
+            }
+            else if(lastElem == currNode){ // if currNode is the firstElem
+                lastElem = lastElem.prev;
+                if(lastElem != null){ // only single Element was there.
+                    lastElem.next = null;
+                }
             }
             else{ // currNode is in middle or end
-                prevNode.next = currNode.next;
-                if(currNode == lastElem){ // currNode is the lastElem
-                    lastElem = prevNode;
-                }
+                currNode.prev.next = currNode.next;  // Bypass the node
+                currNode.next.prev = currNode.prev;
             }
 
             currNode.next = null; // remove unwanted next reference for currNode
+            currNode.prev = null;
         }
 
         private void addNodeToList(Node newNode, Node prevNode){
@@ -125,20 +114,26 @@ public class Design6_LRU_Cache {
             }
             else if(prevNode == null){ // newNode to be added at start
                 newNode.next = firstElem;
+                firstElem.prev = newNode;
                 firstElem = newNode;
             }
             else{ // newNode to be added at middle
                 newNode.next = prevNode.next;
-                prevNode.next = newNode;
-                if(prevNode == lastElem){ // newNode to be added at last
+                newNode.prev = prevNode;
+
+                if(prevNode.next != null){
+                    prevNode.next.prev = newNode;
+                }
+                else{
                     lastElem = newNode;
                 }
+                prevNode.next = newNode;
             }
         }
     }
 
     public static void main(String[] args) {
-        My_LRUCache myLRUCache = new My_LRUCache(4);
+        My_LRUCache myLRUCache = new My_LRUCache(3);
 
         myLRUCache.put(2,6);
         myLRUCache.put(4,7);
