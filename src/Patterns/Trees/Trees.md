@@ -28,6 +28,7 @@
 
 - A Tree whose elements have at most 2 children.
 
+
 Types of Binary Tree
 
 1. Full Binary Tree
