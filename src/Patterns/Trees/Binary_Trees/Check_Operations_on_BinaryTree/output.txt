@@ -1,0 +1,45 @@
+│       ┌── 3
+│   ┌── 2
+│   │   └── 4
+└── 1
+    │   ┌── 4
+    └── 2
+        └── 3
+isSymmetric: true
+isComplete: true
+isHeightBalanced: true true
+***********************************
+│       ┌── 3
+│   ┌── 2
+└── 1
+    │   ┌── 3
+    └── 2
+isSymmetric: false
+isComplete: false
+isHeightBalanced: true true
+***********************************
+│       ┌── 7
+│   ┌── 20
+│   │   └── 15
+└── 3
+    └── 9
+isSymmetric: false
+isComplete: false
+isHeightBalanced: true true
+***********************************
+│   ┌── 2
+└── 1
+    │   ┌── 3
+    └── 2
+        │   ┌── 4
+        └── 3
+            └── 4
+isSymmetric: false
+isComplete: false
+isHeightBalanced: false false
+***********************************
+Empty tree
+isSymmetric: true
+isComplete: true
+isHeightBalanced: true true
+***********************************

@@ -1,4 +1,4 @@
-package Patterns.Trees.Lowest_Common_Ancestor_of_BinaryTree;
+package Patterns.Trees.Binary_Trees.Ancestor.Lowest_Common_Ancestor_of_BinaryTree;
 
 import Helpers.ProblemSolver;
 import Helpers.DataStructure.Trees.TreeNode;

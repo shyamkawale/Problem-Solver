@@ -1,4 +1,4 @@
-package Patterns.Trees.Diameter_and_Width_of_BinaryTree;
+package Patterns.Trees.Binary_Trees.Diameter_and_Width_of_BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -144,8 +144,9 @@ Coding perspective
 
 - LevelOrder Traversal Iterative Approach (with & without levels)
 - LevelOrder Traversal Recursive(DFS) Approach
+6. [Zigzag Traversal of Tree](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) ✅
 
-Construction Of Trees
+ReConstruction Of Trees
 
 Construct Tree Using
 
@@ -163,33 +164,52 @@ Operations on Binary Tree
 
 Basic Questions
 
-1. [Height/Depth of Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) ✅
-4. [Same Tree](https://leetcode.com/problems/same-tree/)
-
-
-5. [Symmetric Trees](https://leetcode.com/problems/symmetric-tree/) ✅
-18. [Check Completeness of a Binary Tree](https://leetcode.com/problems/check-completeness-of-a-binary-tree/) levelorder ✅
-2. [Check if the Binary tree is height-balanced or not](https://leetcode.com/problems/balanced-binary-tree/) 💡 ✅
-
-3. [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
-14. [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/)
-
-7. [Left & Right View](https://leetcode.com/problems/binary-tree-right-side-view/) ✅
-8. [Top View](https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1) ✅
-9. [Bottom View](https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1) ✅
-
-6. [Zigzag Traversal of Tree](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) ✅
-11. [Reverse Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) ✅ LevelOrder + reverse res
-
-10. [Construct Inorder LinkedList](https://leetcode.com/problems/increasing-order-search-tree/) Construction of Tree
-12. [Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/)
-13. [All Nodes Distance K in Binary Tree](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/)
-15. [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ✅
-16. [Maximum Level Sum of a Binary Tree](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/)
-17. [Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/) leaf node identification
 
 19. [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) Inline modifying existing tree to linkedList
-20. [All Posible Full BinaryTrees]()
+20. [Construct Inorder LinkedList](https://leetcode.com/problems/increasing-order-search-tree/) Construction of Tree
+
+
+21. [All Nodes Distance K in Binary Tree](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/) 💡✅ traversing 3 sides (with parent pointers (i.e up and down) and then graph BFS)
+
+DFS
+
+1. [Height/Depth of Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) ✅
+2. [Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/) ✅ DFS + leaf node identification
+
+Views
+
+1. [Left View](https://leetcode.com/problems/binary-tree-right-side-view/) ✅
+2. [Right View](https://leetcode.com/problems/binary-tree-right-side-view/) ✅
+3. [Top View](https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1) ✅
+4. [Bottom View](https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1) ✅
+
+Check Operations on Binary Trees
+
+1. [Symmetric Trees](https://leetcode.com/problems/symmetric-tree/) ✅
+2. [Check Completeness of a Binary Tree](https://leetcode.com/problems/check-completeness-of-a-binary-tree/) levelorder ✅
+3. [Check if the Binary tree is height-balanced or not](https://leetcode.com/problems/balanced-binary-tree/) 💡 ✅
+
+Diameter and Width of BinaryTrees
+
+1. [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) ✅
+2. [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/) ✅
+
+Ancestor
+
+1. [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ✅
+2. [Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/) ✅
+
+Other Concept
+
+1. [All Posible Full BinaryTrees](https://leetcode.com/problems/all-possible-full-binary-trees/) 💡 [Memoization, dp]
+
+Understandably Easy
+
+1. [Reverse Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) ✅ LevelOrder + reverse res
+2. [Maximum Level Sum of a Binary Tree](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/) ✅ LevelOrder + maintaining sum of each level
+3. [Same Tree](https://leetcode.com/problems/same-tree/) ✅
+4. [Min Depth of BT](https://leetcode.com/problems/minimum-depth-of-binary-tree/) ✅
+
 
 Techniques
 
@@ -207,6 +227,8 @@ Techniques
 
 - Top-down -> from root node at the top to all the way down to the leaf node(s)
 - Bottom-up -> recursively go to the leaf node(s) and backtrack up to the root node one by one
+
+- Parent Map and Graph BFS
 
 ## Binary Search Tree (BST)
 

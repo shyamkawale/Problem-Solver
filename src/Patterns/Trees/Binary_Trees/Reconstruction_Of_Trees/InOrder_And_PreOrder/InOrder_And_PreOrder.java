@@ -1,4 +1,4 @@
-package Patterns.Trees.Reconstruction_Of_Trees.InOrder_And_PreOrder;
+package Patterns.Trees.Binary_Trees.Reconstruction_Of_Trees.InOrder_And_PreOrder;
 
 import java.util.HashMap;
 import java.util.Map;

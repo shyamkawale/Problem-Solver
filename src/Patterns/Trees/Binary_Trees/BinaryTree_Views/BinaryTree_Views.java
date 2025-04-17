@@ -1,4 +1,4 @@
-package Patterns.Trees.BinaryTree_Views;
+package Patterns.Trees.Binary_Trees.BinaryTree_Views;
 
 import java.util.ArrayList;
 import java.util.List;
