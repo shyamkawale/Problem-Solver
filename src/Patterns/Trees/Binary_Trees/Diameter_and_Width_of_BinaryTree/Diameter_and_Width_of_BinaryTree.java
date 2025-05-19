@@ -1,5 +1,6 @@
 package Patterns.Trees.Binary_Trees.Diameter_and_Width_of_BinaryTree;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -22,6 +23,50 @@ public class Diameter_and_Width_of_BinaryTree extends ProblemSolver {
 
         int width = widthOfBT(root);
         System.out.println("Width of Tree: " + width);
+
+        int width2 = widthOfBT2(root);
+        System.out.println("Width of Tree: " + width2);
+    }
+
+    private int widthOfBT2(TreeNode root) {
+        if(root == null){
+            return 0;
+        }
+
+        Deque<TreeNode> deque = new LinkedList<>();
+        deque.offerLast(root);
+        int width = 0;
+
+        while(!deque.isEmpty()){
+            while(!deque.isEmpty() && deque.peekFirst() == null){
+                deque.pollFirst();
+            }
+
+            while(!deque.isEmpty() && deque.peekLast() == null){
+                deque.pollLast();
+            }
+
+            int size = deque.size();
+            if(size == 0){
+                break;
+            }
+            width = Math.max(width, size);
+
+            for(int i=0; i<size; i++){
+                TreeNode polledNode = deque.pollFirst();
+
+                if(polledNode == null){
+                    deque.offerLast(null);
+                    deque.offerLast(null);
+                }
+                else{
+                    deque.offerLast(polledNode.left);
+                    deque.offerLast(polledNode.right);
+                }
+            }
+        }
+
+        return width;
     }
 
     class Pair{ 
@@ -34,6 +79,7 @@ public class Diameter_and_Width_of_BinaryTree extends ProblemSolver {
         }
     }
 
+    // added: Little variation of storing 0 to n idx for every level of tree.. 🚀🚀🚀⭐ (VIMP)
     public int widthOfBT(TreeNode root) {
         if(root == null){
             return 0;
@@ -46,19 +92,23 @@ public class Diameter_and_Width_of_BinaryTree extends ProblemSolver {
         while(!queue.isEmpty()){
             int size = queue.size();
             int leftMostNodeIdx = queue.peek().idx;
-            int rightMostNodeIdx = queue.peek().idx;
+            int rightMostNodeIdx = -1;
 
             for(int i=0; i<size; i++){
                 Pair polledItem = queue.poll();
-                TreeNode node = polledItem.node;
+                TreeNode polledNode = polledItem.node;
                 int idx = polledItem.idx;
                 rightMostNodeIdx = idx;
 
-                if(node.left != null){
-                    queue.offer(new Pair(node.left, 2*idx+1));
+                if(polledNode.left != null){
+                    // queue.offer(new Pair(polledNode.left, 2*idx+1));
+                    // this variation will impress Interview instaead of above:
+                    queue.offer(new Pair(polledNode.left, 2*idx+1-(2*leftMostNodeIdx-1)));
                 }
-                if(node.right != null){
-                    queue.offer(new Pair(node.right, 2*idx+2));
+                if(polledNode.right != null){
+                    // queue.offer(new Pair(polledNode.right, 2*idx+2));
+                    // this variation will impress Interview instaead of above:
+                    queue.offer(new Pair(polledNode.right, 2*idx+2-(2*leftMostNodeIdx-1)));
                 }
             }
             maxWidth = Math.max(maxWidth, rightMostNodeIdx - leftMostNodeIdx + 1);

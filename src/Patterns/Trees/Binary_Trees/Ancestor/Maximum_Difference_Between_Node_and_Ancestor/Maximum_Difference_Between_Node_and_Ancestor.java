@@ -4,6 +4,10 @@ import Helpers.ProblemSolver;
 import Helpers.DataStructure.Trees.TreeNode;
 import Helpers.DataStructure.Trees.TreeWrapper;
 
+/*
+https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
+
+ */
 public class Maximum_Difference_Between_Node_and_Ancestor extends ProblemSolver {
     public static void main(String[] args) {
         new Maximum_Difference_Between_Node_and_Ancestor().readInput();
@@ -18,6 +22,8 @@ public class Maximum_Difference_Between_Node_and_Ancestor extends ProblemSolver 
     }
 
     int res = 0;
+    // TC: O(n)
+    // SC: RecO(h)
     public int maxAncestorDiff(TreeNode root) {
         helper(root, root.val, root.val);
         return res;
@@ -35,5 +41,4 @@ public class Maximum_Difference_Between_Node_and_Ancestor extends ProblemSolver 
         helper(root.left, max, min);
         helper(root.right, max, min);
     }
-
 }

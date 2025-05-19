@@ -1,4 +1,4 @@
-package Patterns.Trees.Binary_Trees.All_Nodes_Distance_K_in_BinaryTree;
+package Patterns.Trees.Binary_Trees.ParentMap.All_Nodes_Distance_K_in_BinaryTree;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

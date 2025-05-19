@@ -141,7 +141,7 @@ Coding perspective
 
 - Inorder Traversal Recursive + Iterative Approach
 - PreOrder Traversal Recursive + Iterative Approach
-- PostOrder Traversal Recursive + Iterative Approach
+- PostOrder Traversal Recursive + Iterative Approach (Tricky)
 
 - LevelOrder Traversal Iterative Approach (with & without levels)
 - LevelOrder Traversal Recursive(DFS) Approach
@@ -163,19 +163,25 @@ Operations on Binary Tree
 1. Insertion in a BinaryTree. #TODO 📅
 2. Deletion in a BinaryTree. #TODO 📅
 
-Basic Questions
+Successor/ Predecessor of a node in BT
 
+1. InOrder Successor/ Predecessor of a node.
+2. PreOrder Successor/ Predecessor of a node.
+3. PostOrder Successor/ Predecessor of a node.
+4. LevelOrder Successor/ Predecessor of a node.
+
+Basic Questions
 
 19. [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) Inline modifying existing tree to linkedList
 20. [Construct Inorder LinkedList](https://leetcode.com/problems/increasing-order-search-tree/) Construction of Tree
 
 
-21. [All Nodes Distance K in Binary Tree](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/) 💡✅ traversing 3 sides (with parent pointers (i.e up and down) and then graph BFS)
-
 DFS
 
 1. [Height/Depth of Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) ✅
 2. [Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/) ✅ DFS + leaf node identification
+3. [Delete Leaf leaves of given value](https://leetcode.com/problems/delete-leaves-with-a-given-value/)
+4. [BinaryTree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/) ✅ ⭐(HARD)
 
 Views
 
@@ -198,7 +204,21 @@ Diameter and Width of BinaryTrees
 Ancestor
 
 1. [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ✅
-2. [Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/) ✅
+2. [Lowest Common Ancestor of Deepest Leaves](https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/description/) ✅
+3. [Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/) ✅
+
+ParentMap + BFS
+
+1. [All Nodes Distance K in Binary Tree](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/) 💡✅ traversing 3 sides (with parent pointers (i.e up and down) and then graph BFS)
+
+ParentMap + BFS , LCA
+
+1. [Find Distance in a BinaryTree](https://leetcode.com/problems/find-distance-in-a-binary-tree/) ✅
+2. [Step-By-Step Directions From a Binary Tree Node to Another](https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/) ⏲️
+
+ParentMap + LeafNode + DFS
+
+1. [Number of Good Leaf Nodes Pairs](https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/)
 
 Other Concept
 
@@ -210,6 +230,9 @@ Understandably Easy
 2. [Maximum Level Sum of a Binary Tree](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/) ✅ LevelOrder + maintaining sum of each level
 3. [Same Tree](https://leetcode.com/problems/same-tree/) ✅
 4. [Min Depth of BT](https://leetcode.com/problems/minimum-depth-of-binary-tree/) ✅
+5. [Even Odd Tree](https://leetcode.com/problems/even-odd-tree/) ✅ levelOrder - Try to do it with DFS ⏲️
+
+
 
 
 Techniques
@@ -217,19 +240,26 @@ Techniques
 - LevelOrder
   - with different levels
   - nulls(Use LinkedList)
+  - recursive preorder with depth
 
 - Identify a leaf Node
 
-- Indexing a Binary Tree
+- Indexing a Binary Tree (additional: with variation of indexing 0-n for any level of Tree)
+    - Width of BT problem.
 
-- Horizontal Distance, Level in DFS
+- Horizontal Distance, Level in DFS (see BT Views)
 
 - Construction of Tree ??
+
+- Track max, min of any branch(i.e all root-to-leaf branches)
 
 - Top-down -> from root node at the top to all the way down to the leaf node(s)
 - Bottom-up -> recursively go to the leaf node(s) and backtrack up to the root node one by one
 
+- LCA
+- Distance between 2 nodes
 - Parent Map and Graph BFS
+- Parent Map and Graph DFS
 
 ## Binary Search Tree (BST)
 
@@ -248,9 +278,9 @@ Techniques
 3   7     20
 ```
 
-- Search in BST (logn)
-- Insertion in BST
-- Deletion from BST
+- Search in BST (logn) ✅
+- Insertion in BST ✅
+- Deletion from BST ✅
 
 Reconstruction of BST
 
@@ -266,5 +296,17 @@ Reconstruction of BST
 
 Problems
 
-1. Find Min/Max element of BST
-2. Ceil/Floor in a BST
+1. LCA of BST (very similar to LCA of BT)(https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/) ✅
+2. Find Min/Max element of BST ✅
+3. Find Ceil/Floor in a BST ✅
+4. [Find Kth largest/smallest in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) ✅
+5. [Check if Tree is BST](https://leetcode.com/problems/validate-binary-search-tree/) ✅
+6. 
+
+
+
+TODO:
+
+- Graph conversion of Tree & apply BFS, DFS
+(example: https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/editorial/)
+

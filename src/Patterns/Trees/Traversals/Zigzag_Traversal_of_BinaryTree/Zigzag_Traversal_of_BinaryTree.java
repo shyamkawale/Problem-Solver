@@ -56,7 +56,7 @@ public class Zigzag_Traversal_of_BinaryTree extends ProblemSolver {
 
                 if(polledNode.right != null){
                     queue.offer(polledNode.right);
-                }        
+                }
             }
 
             res.add(list);

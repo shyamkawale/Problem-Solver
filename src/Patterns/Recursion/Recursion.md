@@ -219,3 +219,10 @@ Subsequence = A contigous / non-contigous sequences, which follows the **order**
 14. Generate Parenthesis
 
 15. Find All Partitions (String + Array)
+
+16. [Finding 3 Digit Even Number](https://leetcode.com/problems/finding-3-digit-even-numbers/description/) - Permutation of 3 length with even number condition with duplicate input and distinct output
+- Check other solutions
+
+
+Technique: 
+Duplicate + Permutation technique (see 16 problem) - brainstorm

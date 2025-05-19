@@ -5,9 +5,11 @@
         └── 4
 Diameter of Tree: 3
 Width of Tree: 2
+Width of Tree: 2
 ***********************************
 └── 1
     └── 2
 Diameter of Tree: 1
+Width of Tree: 1
 Width of Tree: 1
 ***********************************
