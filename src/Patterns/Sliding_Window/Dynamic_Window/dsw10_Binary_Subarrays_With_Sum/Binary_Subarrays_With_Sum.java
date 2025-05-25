@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Dynamic_Window.dsw9_Binary_Subarrays_With_Sum; 
+package Patterns.Sliding_Window.Dynamic_Window.dsw10_Binary_Subarrays_With_Sum; 
  
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Dynamic_Window.dsw11_Subarrays_with_K_Different_Integers; 
+package Patterns.Sliding_Window.Dynamic_Window.dsw13_Subarrays_with_K_Different_Integers; 
  
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver; 
@@ -24,7 +24,7 @@ Explanation: Subarrays formed with exactly 3 different integers: [1,2,1,3], [2,1
 
 // Concept: Dynamic Sliding Window(Count all valid subarrays), optimal sol = Atmost Venn Diagram Technique
 // Return: Total Count of all Valid Windows
-// Trick(Most Optimal Solution): countOfSubarrays(==k) = countOfSubarrays(<=k) - countOfSubarrays(<=k-1)
+// Trick(Most Optimal Solution): countOfSubarrays(==k) = countOfSubarrays(<= k) - countOfSubarrays(<= k-1)
 // ** 🚀 AtMost Venn Diagram Technique 🚀 **            (atMost K)            - (atMost K-1)
 */
 public class Subarrays_with_K_Different_Integers extends ProblemSolver { 

@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Dynamic_Window.dsw10_Number_of_Substrings_Containing_All_Three_Characters; 
+package Patterns.Sliding_Window.Dynamic_Window.dsw11_Number_of_Substrings_Containing_All_Three_Characters; 
  
 import Helpers.DataConvertor; 
 import Helpers.ProblemSolver; 

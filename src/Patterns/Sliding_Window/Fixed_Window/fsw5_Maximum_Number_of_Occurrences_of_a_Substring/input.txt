@@ -1,1 +1,3 @@
+"aababcaab" & 2 & 3 & 4
+"aaaa" & 1 & 3 & 3
 "abcde" & 2 & 3 & 3

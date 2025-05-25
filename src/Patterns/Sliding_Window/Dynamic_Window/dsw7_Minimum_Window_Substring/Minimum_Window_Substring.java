@@ -57,6 +57,8 @@ public class Minimum_Window_Substring extends ProblemSolver{
             char endCh = s.charAt(end);
 
             sMap.put(endCh, sMap.getOrDefault(endCh, 0)+1);
+
+            // counting elements whose freq in sMap and tMap is same
             if(tMap.containsKey(endCh) && sMap.get(endCh).equals(tMap.get(endCh))) matchedCnt++;
 
             if(matchedCnt < tMap.size()){ // InValid Window (when cond < k)
@@ -72,10 +74,7 @@ public class Minimum_Window_Substring extends ProblemSolver{
                     }
 
                     //remove startCh from hashMap
-                    sMap.put(startCh, sMap.get(startCh)-1);
-                    if(sMap.get(startCh) <= 0){
-                        sMap.remove(startCh);
-                    }
+                    sMap.computeIfPresent(startCh, (key, val) -> val == 1 ? null : val-1);
 
                     // remove startCh count from matchedCnt
                     if(tMap.containsKey(startCh) && sMap.getOrDefault(startCh, 0) < tMap.get(startCh)){

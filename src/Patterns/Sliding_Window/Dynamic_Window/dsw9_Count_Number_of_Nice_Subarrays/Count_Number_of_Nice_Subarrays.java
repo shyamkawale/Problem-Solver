@@ -1,4 +1,4 @@
-package Patterns.Sliding_Window.Dynamic_Window.dsw8_Count_Number_of_Nice_Subarrays; 
+package Patterns.Sliding_Window.Dynamic_Window.dsw9_Count_Number_of_Nice_Subarrays; 
  
 import Helpers.DataConvertor; 
 import Helpers.ProblemSolver; 

@@ -59,16 +59,14 @@ public class Fruit_Into_Baskets extends ProblemSolver {
             }
             else if(freqMap.size() > basketCnt){ // when cond > k (Invalid Window)
                 while(freqMap.size() > basketCnt){  // remove start till cond <= k
+                    // remove start
                     int startElem = fruits[start];
-                    freqMap.put(startElem, freqMap.get(startElem)-1);
-                    if(freqMap.get(startElem) <= 0) freqMap.remove(startElem);
-
+                    freqMap.computeIfPresent(startElem, (key, val) -> val==1 ? null : val-1);
                     start++;
                 }
 
                 // remove end to revaluate window (as now cond <= k)
-                freqMap.put(endElem, freqMap.get(endElem)-1);
-                if(freqMap.get(endElem) <= 0) freqMap.remove(endElem);
+                freqMap.computeIfPresent(endElem, (key, val) -> val==1 ? null : val-1);
             }
         }
         return maxCount;
