@@ -1,4 +1,4 @@
-package Patterns.Heap;
+package Patterns.Heap.Design;
 
 import java.util.ArrayList;
 import java.util.HashMap;
