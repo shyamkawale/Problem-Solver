@@ -1,0 +1,4 @@
+"aaabc" & 3
+"abab" & 2
+"aabbcc" & 3
+"blogaupyqfpupmtexsyergrnfiiffknsctibmlovn" & 10

@@ -9,6 +9,13 @@
 - In DLL, if prev is null (could be Head) and if next is null (could be Tail)
 - In DLL mark next in BLUE normal arrow, prev in BLACK colored arrow.
 
+## Types of LinkedList
+
+1. Singly Linked List (SLL)
+2. Doubly Linked List (DLL)
+3. LinkedList with Loop
+4. Cirular LinkedList
+
 ## Terminologies used for naming
 
 ```java
@@ -59,13 +66,13 @@
 1. [Detect Cycle in LinkedList](https://leetcode.com/problems/linked-list-cycle/)
 2. [Intersection of Two LinkedList](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 3. Odd Even Value Segregation in LinkedList
-4. [Add Two Numbers](https://leetcode.com/problems/add-two-numbers-ii/) #TODO 📅
+4. [Add Two Numbers](https://leetcode.com/problems/add-two-numbers-ii/) #TODO 📅 done
 5. [Add 1 to LinkedList Number](https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1)
 6. [Insert Greatest Common Divisor in LinkedList](https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/)
 7. [Split LinkedList in K Parts](https://leetcode.com/problems/split-linked-list-in-parts/)
 
-8. [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) #TODO 📅
-9. [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) #TODO 📅
+8. [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) #TODO 📅 done
+9. [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) #TODO 📅 done
 10. [Remove Duplicate from Sorted DLL](https://www.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1) #TODO 📅
 11. [Find pairs with given sum in doubly linked list](https://www.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1) #TODO 📅
 12. [Flattening a Linked List](https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1) #TODO 📅
@@ -78,11 +85,15 @@
 2. [Merge K Sorted LinkedList](https://leetcode.com/problems/merge-k-sorted-lists/) #TODO 📅
 3. [Next Greater Node in LinkedList](https://leetcode.com/problems/next-greater-node-in-linked-list) #TODO 📅
 
+## Easy not written:
+
+1. [Partition List](https://leetcode.com/problems/partition-list/)
+
 ## Techniques
 
 1. Hare and Tortoise Method(Slow and fast pointer)
 2. Recursion in LinkedList
-3. DummyNode Concept
+3. DummyNode Concept (when returning new List)
 4. Length Difference for finding intersection of LinkedList
 
 ## Traversal techniques in LinkedList

@@ -53,4 +53,15 @@ public class GCD {
         if(n1 == 0) return n2;
         return n1;
     }
+
+    // TO REVIEW
+    // 💡recursive GCD algo 
+    // TC => O(log(min(a, b))), 
+    // SC => O(log(min(a, b))) because each recursive call adds a new frame to the call stack, and the recursion depth is logarithmic in the size of the smaller number.
+    // private int getGCD(int a, int b){
+    //     if (b == 0) {
+    //         return a;
+    //     }
+    //     return getGCD(b, a % b);
+    // }
 }

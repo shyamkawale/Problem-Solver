@@ -1,0 +1,6 @@
+[5, 4, 2, 3, 1, 0] [4, 5, 0, 2, 3, 1]
+***********************************
+TopologicalSort:DFS - Graph is not DAG!!
+TopologicalSort:BFS - Graph is not DAG!!
+[] [0]
+***********************************

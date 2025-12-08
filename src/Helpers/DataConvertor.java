@@ -7,6 +7,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
+import Helpers.DataStructure.Trees.TreeNode;
+
 public class DataConvertor {
     private static final Gson gson = new Gson();
 
@@ -62,6 +64,10 @@ public class DataConvertor {
         return fromJson(json, int[].class);
     }
 
+    public static String[] toStringArray(String json) {
+        return fromJson(json, String[].class);
+    }
+
     public static long[] toLongArray(String json) {
         return fromJson(json, long[].class);
     }
@@ -76,6 +82,10 @@ public class DataConvertor {
 
     public static int[][] to2DIntArray(String json) {
         return fromJson(json, int[][].class);
+    }
+
+    public static char[][] to2DCharArray(String json) {
+        return fromJson(json, char[][].class);
     }
 
     public static String[][] to2DStringArray(String json) {

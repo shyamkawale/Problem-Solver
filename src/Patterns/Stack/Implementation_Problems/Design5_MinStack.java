@@ -3,6 +3,23 @@ package Patterns.Stack.Implementation_Problems;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/*
+https://leetcode.com/problems/min-stack
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+Implement the MinStack class:
+
+MinStack() initializes the stack object.
+void push(int val) pushes the element val onto the stack.
+void pop() removes the element on the top of the stack.
+int top() gets the top element of the stack.
+int getMin() retrieves the minimum element in the stack.
+You must implement a solution with O(1) time complexity for each function.
+
+Approaches:
+Approach 1: Using 2 stacks (One for original stack and other for maintaining minimum element)
+Approach 2: Using Pair(elem, minElem) to maintain minimum element
+ */
 public class Design5_MinStack {
 
     // SC:
@@ -40,16 +57,6 @@ public class Design5_MinStack {
         }
     }
 
-    class Pair<E> {
-        public E elem;
-        public E minElem;
-
-        public Pair(E elem, E idx) {
-            this.elem = elem;
-            this.minElem = idx;
-        }
-    }
-
     /*############################################################################################################ */
 
     // SC:
@@ -83,6 +90,16 @@ public class Design5_MinStack {
 
         public E getMin() {
             return stack.peek().minElem;
+        }
+    }
+
+    class Pair<E> {
+        public E elem;
+        public E minElem;
+
+        public Pair(E elem, E minElem) {
+            this.elem = elem;
+            this.minElem = minElem;
         }
     }
 

@@ -14,6 +14,7 @@ public class BasicMaths{
     private static void showModulusUses() {
         System.out.println("*** Modulus operations and Uses: ***");
 
+        System.out.println(7/2);
         // Modulo
         // % is used to find the remainder when one number is divided by another
         // a%b = c i.e when a is divided by b then rem is c
@@ -82,7 +83,7 @@ public class BasicMaths{
         System.out.println("Handling Large Numbers in Modular Arithmetic");
         int mod = 1000000007;
         int bigNumber = Integer.MAX_VALUE; //2147483647
-        int afterAddingToBigNumber = (bigNumber + 1) % mod;
+        int afterAddingToBigNumber = (bigNumber + 1) % mod; // what will be the value??
         System.out.println("After adding bigNumber: "+afterAddingToBigNumber);
         System.out.println();
 
@@ -91,14 +92,14 @@ public class BasicMaths{
         int currentHour = 23;
         int hoursToAdd = 5;
         int finalHour = (currentHour + hoursToAdd) % 24; // 24-hour clock
-        System.out.println(hoursToAdd+" hourse after currenthour("+currentHour+") is "+finalHour); // Output will be 15
+        System.out.println(hoursToAdd+" hours after currenthour("+currentHour+") is "+finalHour); // Output will be 15
         System.out.println();
 
         //Rotate Array (Cyclic Rotation)
         System.out.println("Rotate Array (Cyclic Rotation)");
         //A common problem is rotating an array by k positions. Using modulus simplifies index wrapping:
         // public int[] rotateArray(int[] arr, int k) {
-            int rotPosition = 2; // rotate to left or right??
+            int rotPosition = 2; // rotate right
             int[] rotated = new int[len];
             for (int i = 0; i < len; i++) {
                 rotated[(i + rotPosition) % len] = array[i];

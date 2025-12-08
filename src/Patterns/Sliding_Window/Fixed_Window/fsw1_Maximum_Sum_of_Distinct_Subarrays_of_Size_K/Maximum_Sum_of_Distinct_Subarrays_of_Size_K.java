@@ -39,27 +39,30 @@ public class Maximum_Sum_of_Distinct_Subarrays_of_Size_K extends ProblemSolver {
         long maxSum = 0;
 
         while(end < nums.length){
-            sum = sum + nums[end];
-            map.put(nums[end], map.getOrDefault(nums[end], 0)+1);
+            int endElem = nums[end];
 
-            if(end-start+1 < k){  // window size < k
+            sum = sum + endElem;
+            map.put(endElem, map.getOrDefault(endElem, 0)+1);
+
+            if(end-start+1 < k){ // window size < k
                 end++;
             }
-            else if(end-start+1 == k){ //window is set
+            else if(end-start+1 == k){ // window is set
                 //store ans
                 if(map.size() == k){ // to know if window contains all distinct
                     maxSum = Math.max(sum, maxSum);
                 }
-
-                sum = sum - nums[start];
-                map.replace(nums[start], map.get(nums[start])-1);
-                if(map.get(nums[start]) == 0) map.remove(nums[start]);
+                
+                // remove start element from map and sum
+                int startElem = nums[start];
+                sum = sum - startElem;
+                map.computeIfPresent(startElem, (key, value) -> value == 1 ? null : value-1);
 
                 start++;
                 end++;
             }
         }
         return maxSum;
-    } 
+    }
  
 } 

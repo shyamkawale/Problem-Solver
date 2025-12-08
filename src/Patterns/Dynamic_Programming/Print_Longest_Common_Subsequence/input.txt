@@ -1,0 +1,5 @@
+"abcde" & "ace"
+"abc" & "abc"
+"abc" & "def"
+"abcba" & "abcbcba"
+"adb" & "abcb"

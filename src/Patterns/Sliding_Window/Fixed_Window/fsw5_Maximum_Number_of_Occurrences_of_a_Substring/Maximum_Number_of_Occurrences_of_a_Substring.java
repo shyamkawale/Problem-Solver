@@ -40,14 +40,14 @@ public class Maximum_Number_of_Occurrences_of_a_Substring extends ProblemSolver{
         Map<String, Integer> eligibleSubstringCntMap = new HashMap<String, Integer>(); // to store occurences(count) of eligible substring
         int maxCount = 0;
 
-        for(int k = minSize; k <= maxSize; k++){
+        for(int k = minSize; k <= maxSize; k++){ // this can be omitted, we only need to care about winSize = minSize.
             int[] freqArr = new int[26];
             int uniqueCount = 0;
             int start = 0;
             int end = 0;
             while(end < len){
-                freqArr[str.charAt(end)-'a']++;
                 if (freqArr[str.charAt(end) - 'a'] == 0) uniqueCount++;
+                freqArr[str.charAt(end)-'a']++;
 
                 if(end-start+1 < k){ //window size < k
                     end++;

@@ -5,7 +5,7 @@ import Helpers.ProblemSolver;
  
 /*
 https://leetcode.com/problems/search-a-2d-matrix-ii/
-Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. 
+Write an efficient algorithm that searches for a value target in an m x n integer matrix. 
 This matrix has the following properties:
 1) Integers in each row are sorted in ascending from left to right.
 2) Integers in each column are sorted in ascending from top to bottom.
@@ -55,7 +55,7 @@ public class Search_a_2D_Matrix_II extends ProblemSolver {
         for(int i=0; i<rowCnt; i++){
             int startElem = matrix[i][0];
             int endElem = matrix[i][colCnt-1];
-            if(startElem <= target && target <= endElem){
+            if(startElem <= target && target <= endElem) {
                 if(binarySearch(matrix[i], target)){
                     return true;
                 }

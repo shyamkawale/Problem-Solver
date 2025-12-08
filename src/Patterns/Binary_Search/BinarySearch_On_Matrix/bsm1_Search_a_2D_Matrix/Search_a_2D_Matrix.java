@@ -5,7 +5,7 @@ import Helpers.ProblemSolver;
  
 /*
 https://leetcode.com/problems/search-a-2d-matrix/
-You are given an m x n integer matrix matrix with the following two properties:
+You are given an m x n integer matrix with the following two properties:
 1) Each row is sorted in non-decreasing order.
 2) The first integer of each row is greater than the last integer of the previous row.
 Given an integer target, return true if target is in matrix or false otherwise.

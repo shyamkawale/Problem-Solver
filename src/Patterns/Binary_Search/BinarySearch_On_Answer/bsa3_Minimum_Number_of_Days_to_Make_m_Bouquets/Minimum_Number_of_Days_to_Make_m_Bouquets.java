@@ -46,14 +46,24 @@ public class Minimum_Number_of_Days_to_Make_m_Bouquets extends ProblemSolver {
             min = Math.min(min, n);
         }
 
-        int res = -1;
+        // Bruteforce approach: O(n)
+        // 1 2 3 4 5* 6 7 8 9 10
+        // F F F F T* T T T T T
+        // for(int day = min; day <= max; day++){
+        //     if(canMakeMBouquet(bloomDay, day, m, k)){
+        //         return day;
+        //     }
+        // }
+        // return -1;
 
+        int res = -1;
         int left = min;
         int right = max;
 
+        // Binary Search Approach: O(log(n))
         while (left <= right) {
             int mid = left + (int)Math.floor((right - left)/2);
-            if(ifPossible(bloomDay, mid, m, k)){
+            if(canMakeMBouquet(bloomDay, mid, m, k)){
                 res = mid;
                 right = mid - 1;
             }
@@ -65,7 +75,7 @@ public class Minimum_Number_of_Days_to_Make_m_Bouquets extends ProblemSolver {
     }
 
     // on mid day is it possible to create a bouquet??
-    public boolean ifPossible(int[] bloomDay, int day, int totBq, int adjFl){
+    public boolean canMakeMBouquet(int[] bloomDay, int day, int totBq, int adjFl){
         int adjCnt = 0;
         int bq = 0;
         for(int i=0; i<bloomDay.length; i++){
@@ -79,6 +89,32 @@ public class Minimum_Number_of_Days_to_Make_m_Bouquets extends ProblemSolver {
             }
         }
         bq = bq + adjCnt/adjFl;
+        return bq >= totBq;
+    }
+
+    // alternative of above
+    public boolean canMakeMBouquet_bruteforce(int[] bloomDay, int days, int totBq, int adjFl){
+        int bq = 0;
+        int currIdx = 0;
+
+        while(currIdx < bloomDay.length){
+            int cnt = 0;
+            for(int i=1; i<=adjFl; i++){
+                currIdx = currIdx + i;
+                if(currIdx >= bloomDay.length) break;
+
+                if(bloomDay[currIdx] <= days){
+                    cnt++;
+                }
+                else{
+                    break;
+                }
+
+                if(cnt == totBq){
+                    bq++;
+                }
+            }
+        }
         return bq >= totBq;
     }
 }

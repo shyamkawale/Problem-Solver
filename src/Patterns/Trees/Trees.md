@@ -1,0 +1,321 @@
+# Trees
+
+- root
+- parent
+- children
+- leaves
+- subtree
+- ancestor
+- internal nodes (non-leaf nodes)
+
+### Depth and Height
+
+```text
+        A  <-- Depth = 0, Height = 3
+       / \
+      B   C  <-- Depth = 1, Height = 2
+     / \   \
+    D   E   F  <-- Depth = 2, Height = 1
+   /         \
+  G           H  <-- Depth = 3, Height = 0 (leaf)
+
+```
+
+- Depth is more important in Trees.. as it starts from root which is unique.
+- Height starts from lowermost leafnode.. which we cannot predict at start and can be multiple.
+
+## Binary Tree
+
+- A Tree whose elements have at most 2 children.
+
+
+Types of Binary Tree
+
+1. Full Binary Tree
+
+    - Every node has 0 or 2 children(i.e no node has 1 child)
+    - No. of Leaf nodes = internal nodes + 1
+    - Height = at most log2(n+1)-1
+
+    ```markdown
+        1
+       / \
+      2   3
+     / \
+    4   5
+    ```
+
+2. Complete Binary Tree
+
+    - All levels except the last are completely filled.
+    - Last level is filled from left to right
+    - Efficiently implemented as an array-based representation (used in Heaps).
+    - Number of nodes at height h = 2^h - 1.
+
+    ```markdown
+         1
+       /  \
+      2    3
+     / \   /
+    4   5 6
+    ```
+
+3. Perfect Binary Tree
+
+    - All leaf nodes are at the same level.
+    - Number of nodes = 2^h - 1, where h is the height.
+
+    ```markdown
+         1
+       /  \
+      2    3
+     / \  / \
+    4   5 6  7
+    ```
+
+4. Balanced Binary Tree
+
+    - The height difference between left and right subtrees of every node is at most 1.
+    - Reduces search time complexity to O(log n).
+    - Used in AVL Trees, Red-Black Trees, and B-Trees.
+
+    ```markdown
+         10
+       /   \
+      5    15
+     / \   / \
+    2   8 12  20
+    ```
+
+5. Degenerate (Skewed) Binary Tree
+
+    - Every Parent nodes has only 1 child.
+    - Resembles a LinkedList.
+    Worst-case time complexity for search = O(n).
+
+    ```markdown
+        1    1         1
+       /      \       /
+      2        2     2
+     /        /       \
+    3        3         3
+    ```
+
+6. Binary Searched Tree (BST)
+
+    - Left subtree contains values smaller than root.
+    - Right subtree contains values greater than root.
+    - No duplicate values (in standard BST).
+    - Search, Insert, Delete in O(log n) time (if balanced).
+    - Used in databases and indexing.
+
+    ```markdown
+        10
+       /  \
+      5    15
+     / \     \
+    3   7     20
+    ```
+
+7. AVL Tree (Self-Balancing BST)
+
+8. Red-Black Tree (Self-Balancing BST)
+
+9. Threaded Binary Tree
+
+10. B-Trees (Generalized BST)
+
+## Traversal of Binary Trees
+
+1. Depth-First Search Traversal (DFS)
+
+    - Inorder Traversal (Left Root Right)
+    - Preorder Traversal (Root Left Right)
+    - Postorder Traversal (Left Right Root)
+
+2. Breadth-First Search Traversal (BFS)
+
+    - Level Order Traversal
+
+Coding perspective
+
+- Inorder Traversal Recursive + Iterative Approach
+- PreOrder Traversal Recursive + Iterative Approach
+- PostOrder Traversal Recursive + Iterative Approach (Tricky)
+
+- LevelOrder Traversal Iterative Approach (with & without levels)
+- LevelOrder Traversal Recursive(DFS) Approach
+6. [Zigzag Traversal of Tree](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) ✅
+
+ReConstruction Of Trees
+
+Construct Tree Using
+
+1. InOrder + PreOrder // Unique Tree
+2. InOrder + PostOrder // Unique Tree
+3. InOrder + LevelOrder // Unique Tree
+4. PreOrder + PostOrder // Multiple trees can be formed if there are missing nodes. (only full binary tree) ?? #TODO 📅
+5. PreOrder + LevelOrder // Level Order does not tell which nodes are left or right children.
+6. PostOrder + LevelOrder // Level Order does not tell which nodes are left or right children.
+
+Operations on Binary Tree
+
+1. Insertion in a BinaryTree. #TODO 📅
+2. Deletion in a BinaryTree. #TODO 📅
+
+Successor/ Predecessor of a node in BT
+
+1. InOrder Successor/ Predecessor of a node.
+2. PreOrder Successor/ Predecessor of a node.
+3. PostOrder Successor/ Predecessor of a node.
+4. LevelOrder Successor/ Predecessor of a node.
+
+Basic Questions
+
+19. [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) Inline modifying existing tree to linkedList
+20. [Construct Inorder LinkedList](https://leetcode.com/problems/increasing-order-search-tree/) Construction of Tree
+
+
+DFS
+
+1. [Height/Depth of Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) ✅
+2. [Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/) ✅ DFS + leaf node identification
+3. [Delete Leaf leaves of given value](https://leetcode.com/problems/delete-leaves-with-a-given-value/)
+4. [BinaryTree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/) ✅ ⭐(HARD)
+
+Views
+
+1. [Left View](https://leetcode.com/problems/binary-tree-right-side-view/) ✅
+2. [Right View](https://leetcode.com/problems/binary-tree-right-side-view/) ✅
+3. [Top View](https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1) ✅
+4. [Bottom View](https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1) ✅
+
+Check Operations on Binary Trees
+
+1. [Symmetric Trees](https://leetcode.com/problems/symmetric-tree/) ✅
+2. [Check Completeness of a Binary Tree](https://leetcode.com/problems/check-completeness-of-a-binary-tree/) levelorder ✅
+3. [Check if the Binary tree is height-balanced or not](https://leetcode.com/problems/balanced-binary-tree/) 💡 ✅
+
+Diameter and Width of BinaryTrees
+
+1. [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) ✅
+2. [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/) ✅
+
+Ancestor
+
+1. [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ✅
+2. [Lowest Common Ancestor of Deepest Leaves](https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/description/) ✅
+3. [Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/) ✅
+
+ParentMap + BFS
+
+1. [All Nodes Distance K in Binary Tree](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/) 💡✅ traversing 3 sides (with parent pointers (i.e up and down) and then graph BFS)
+
+ParentMap + BFS , LCA
+
+1. [Find Distance in a BinaryTree](https://leetcode.com/problems/find-distance-in-a-binary-tree/) ✅
+2. [Step-By-Step Directions From a Binary Tree Node to Another](https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/) ⏲️
+
+ParentMap + LeafNode + DFS
+
+1. [Number of Good Leaf Nodes Pairs](https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/)
+
+Graph from Tree
+
+1. [Amount of Time for Binary Tree to be Infected](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/)
+
+Tree but not literal Tree
+
+1. [Validate Binary Tree Nodes](https://leetcode.com/problems/validate-binary-tree-nodes/)
+
+Other Concept
+
+1. [All Posible Full BinaryTrees](https://leetcode.com/problems/all-possible-full-binary-trees/) 💡 [Memoization, dp]
+
+Understandably Easy
+
+1. [Reverse Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) ✅ LevelOrder + reverse res
+2. [Maximum Level Sum of a Binary Tree](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/) ✅ LevelOrder + maintaining sum of each level
+3. [Same Tree](https://leetcode.com/problems/same-tree/) ✅
+4. [Min Depth of BT](https://leetcode.com/problems/minimum-depth-of-binary-tree/) ✅
+5. [Even Odd Tree](https://leetcode.com/problems/even-odd-tree/) ✅ levelOrder - Try to do it with DFS ⏲️
+
+
+
+
+Techniques
+
+- LevelOrder
+  - with different levels
+  - nulls(Use LinkedList)
+  - recursive preorder with depth
+
+- Identify a leaf Node
+
+- Indexing a Binary Tree (additional: with variation of indexing 0-n for any level of Tree)
+    - Width of BT problem.
+
+- Horizontal Distance, Level in DFS (see BT Views)
+
+- Construction of Tree ??
+
+- Track max, min of any branch(i.e all root-to-leaf branches)
+
+- Top-down -> from root node at the top to all the way down to the leaf node(s)
+- Bottom-up -> recursively go to the leaf node(s) and backtrack up to the root node one by one
+
+- LCA
+- Distance between 2 nodes
+- Parent Map and Graph BFS
+- Parent Map and Graph DFS
+- Convert Tree to Undirected Graph
+
+## Binary Search Tree (BST)
+
+- Left subtree contains values smaller than root.
+- Right subtree contains values greater than root.
+- No duplicate values (in standard BST).
+- Search, Insert, Delete in O(log n) time (if balanced).
+- Used in databases and indexing.
+- If duplicate values then we usually store frequency with Node.
+
+```markdown
+     10
+    /  \
+  5    15
+ / \     \
+3   7     20
+```
+
+- Search in BST (logn) ✅
+- Insertion in BST ✅
+- Deletion from BST ✅
+
+Reconstruction of BST
+
+1. Only with PreOrder
+2. Only with PostOrder
+3. Only with LevelOrder
+
+- Not possible with InOrder?? why?
+
+- InOrder traversal produces output in ascending Order
+- No of unique BST's with n distinct keys is Catalan number (Cn) ?? why?
+  - C0 = 1, C(n+1) = C0Cn + C1C(n-1) + C2C(n-2) + ... + CnC0 = SUM(i=0 to i=n) CiC(n-i)
+
+Problems
+
+1. LCA of BST (very similar to LCA of BT)(https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/) ✅
+2. Find Min/Max element of BST ✅
+3. Find Ceil/Floor in a BST ✅
+4. [Find Kth largest/smallest in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) ✅
+5. [Check if Tree is BST](https://leetcode.com/problems/validate-binary-search-tree/) ✅
+6. 
+
+
+
+TODO:
+
+- Graph conversion of Tree & apply BFS, DFS
+(example: https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/editorial/)
+
