@@ -1,0 +1,16 @@
+Element 6 found at 4
+Lower Bound: 6 at index: 4
+Upper Bound: 7 at index: 6
+Floor: 6 at index: 5
+Predecessor: 5 at index: 3
+FirstSmaller: 5 at index: 2
+LastGreater: 7 at index: 7
+***********************************
+Element 6 found at 0
+Lower Bound: 6 at index: 0
+Upper Bound: 7 at index: 1
+Floor: 6 at index: 0
+Predecessor: -1 at index: 0
+FirstSmaller: -1 at index: -1
+LastGreater: 9 at index: 14
+***********************************

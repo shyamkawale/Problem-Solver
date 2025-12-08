@@ -11,7 +11,11 @@ public class PrimeNumber {
 
     // TC: O(sqrt(n)) becoz for loop is from 2,3,4,5,,,,,till n*n<=num(i.e till n<=sqrt(num))
     private static boolean isPrimeNumber(int num) {
-        for(int i=2; i*i<=num; i++){
+        if (num <= 1) return false;
+        if (num == 2) return true;
+        if (num % 2 == 0) return false; // Even check
+
+        for(int i=3; i*i<=num; i++){
             if(num%i == 0) return false;
         }
         return true;

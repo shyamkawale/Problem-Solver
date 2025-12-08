@@ -11,13 +11,13 @@ A peak element in a 2D grid is an element that is strictly greater than all of i
 You may assume that the entire matrix is surrounded by an outer perimeter with the value -1 in each cell.
 
 Input: matrix = [[1,4],
-              [3,2]]
+                 [3,2]]
 Output: [0,1]
 Explanation: Both 3 and 4 are peak elements so [1,0] and [0,1] are both acceptable answers.
 
 Input: matrix = [[10,20,15],
-              [21,30,14],
-              [7, 16,32]]
+                 [21,30,14],
+                 [7, 16,32]]
 Output: [1,1]
 Explanation: Both 30 and 32 are peak elements so [1,1] and [2,2] are both acceptable answers.
 
@@ -109,7 +109,7 @@ public class Find_Peak_Element_in_Matrix extends ProblemSolver {
         int rowCnt = matrix.length;
         int colCnt = matrix[0].length;
     
-        int left = 0, right = colCnt - 1;
+        int left = 0, right = colCnt - 1; // (top right element)
     
         while (left <= right) {
             int midCol = left + (int)Math.floor((right-left)/2);

@@ -220,6 +220,14 @@ ParentMap + LeafNode + DFS
 
 1. [Number of Good Leaf Nodes Pairs](https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/)
 
+Graph from Tree
+
+1. [Amount of Time for Binary Tree to be Infected](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/)
+
+Tree but not literal Tree
+
+1. [Validate Binary Tree Nodes](https://leetcode.com/problems/validate-binary-tree-nodes/)
+
 Other Concept
 
 1. [All Posible Full BinaryTrees](https://leetcode.com/problems/all-possible-full-binary-trees/) 💡 [Memoization, dp]
@@ -260,6 +268,7 @@ Techniques
 - Distance between 2 nodes
 - Parent Map and Graph BFS
 - Parent Map and Graph DFS
+- Convert Tree to Undirected Graph
 
 ## Binary Search Tree (BST)
 

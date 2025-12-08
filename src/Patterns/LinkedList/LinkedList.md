@@ -85,6 +85,9 @@
 2. [Merge K Sorted LinkedList](https://leetcode.com/problems/merge-k-sorted-lists/) #TODO 📅
 3. [Next Greater Node in LinkedList](https://leetcode.com/problems/next-greater-node-in-linked-list) #TODO 📅
 
+## Easy not written:
+
+1. [Partition List](https://leetcode.com/problems/partition-list/)
 
 ## Techniques
 

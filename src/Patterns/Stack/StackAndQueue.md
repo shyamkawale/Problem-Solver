@@ -23,7 +23,26 @@
 ## Normal Stack
 
 1. [Check for balanced paranthesis](https://leetcode.com/problems/valid-parentheses)
+2*. [Score Of Parenthesis](https://leetcode.com/problems/score-of-parentheses) (Tricky)
+2*. [Remove K Balanced Substring](https://leetcode.com/problems/remove-k-balanced-substrings) (tricky)
 2. [Asteroid Collision](https://leetcode.com/problems/asteroid-collision)
+3. [Smallest (Lexicographically) Subsequence of Distinct Characters](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters)
+    - same as: [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters)
+
+    > Concept: **Remove Duplicate Characters so that every letter appears once and only once** ==> means **find the smallest subsequnce of Distinct Characters**
+4. [Find the Most Competitive Subsequence](https://leetcode.com/problems/find-the-most-competitive-subsequence)
+    - Find Smallest Subsequence of size k
+5. [Remove All Adjacent Duplicates from a String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
+6. [Remove k Adjacent Duplicates from a String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/) (Tricky)
+7. [Minimum Time to Make Rope Colorful](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/) (Easy)
+
+
+TO check
+Constrained Subsequence Sum
+Minimum Cost Tree From Leaf Values
+Sum of Subarray Minimums
+Next Greater Element II
+Next Greater Element I
 
 ## Monotonic Stack
 
@@ -52,3 +71,11 @@
 
 1. [Trapping Rainwater](https://leetcode.com/problems/trapping-rain-water) (not exactly stack) (#toWrite)
 2. [Sliding Window maximum](https://leetcode.com/problems/sliding-window-maximum) (done in sliding window - fsw4)
+
+
+
+New todos:
+
+https://leetcode.com/problems/count-bowl-subarrays/description/ [Previous/NextGreater][Sliding Window][Stack]
+
+https://leetcode.com/problems/resulting-string-after-adjacent-removals/ [Normal Stack]

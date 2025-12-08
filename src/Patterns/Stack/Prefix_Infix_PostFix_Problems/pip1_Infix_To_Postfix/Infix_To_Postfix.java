@@ -35,12 +35,12 @@ public class Infix_To_Postfix extends ProblemSolver{
             }
             else if(getPrecedence(ch) != -1){ // when ch is operator
 
-                // pop stack if stack.peek() precedence is greater than(>) ch precedence
+                // pop stack if stack.peek() precedence is greater than or equal to (>=) ch precedence
                 while(!stack.isEmpty() && getPrecedence(stack.peek()) >= getPrecedence(ch)){
                     Character poped = stack.pop();
                     res.append(poped);
                 }
-                stack.push(ch); // after removing greater preceding operator => push current operator
+                stack.push(ch); // after removing greater preceding operator > push current operator
             }
             else{ // when ch is operands
                 res.append(ch);

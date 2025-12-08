@@ -44,14 +44,24 @@ public class Koko_Eating_Bananas extends ProblemSolver {
 
     // TC: O(log(maxElem) * n) maxElem => maximum elem of array
     public int minEatingSpeed(int[] piles, int hr) {
-        // max bananas Koko can eat will be max(piles)
-        int maxBananasPerHr = findMaxBananasPerHr(piles);
 
-        int left = 1; // minimum Bananas per hour
-        int right = maxBananasPerHr; // maximum Bananas per hour
+        int minSpeed = 1; // minimum Bananas per hour
+        int maxSpeed = findMaxBananasPerHr(piles); // max bananas Koko can eat per hour will be max(piles)
+
+        // Bruteforce approachL: O(n)
+        // 1 2 3 4 5* 6 7 8 9 10
+        // F F F F T* T T T T T
+        // for(int speed = minSpeed; speed <= maxSpeed; speed++){
+        //     if(canKokoEatBeforeTime(bananaPiles, speed, hr)){
+        //         return speed;
+        //     }
+        // }
+        // return -1;
+        
+        int left = minSpeed; 
+        int right = maxSpeed;
         int res = -1;
-
-
+        // Binary search approach: O(log(n))
         while (left <= right) {
             int mid = left + (int) Math.floor((right - left) / 2);
 
@@ -67,17 +77,22 @@ public class Koko_Eating_Bananas extends ProblemSolver {
     }
 
     // with mid bananas per hour can Koko eat all piles before time ??
-    private boolean canKokoEatBeforeTime(int[] piles, int mid, int hr) {
-        int eatingTime = 0;
+    private boolean canKokoEatBeforeTime(int[] piles, int eatingSpeed, int hr) {
+        int remHr = hr;
         for(int n: piles){
-            eatingTime = eatingTime + (int)Math.ceil((double)n/mid);
-        }
-        
-        if(eatingTime <= hr){
-            return true;
+            // int remBananas = n;
+            // while(remBananas > 0){
+            //     remBananas = remBananas - eatingSpeed;
+            //     remHr--;
+            // }
+            remHr = remHr - (int)Math.ceil((double)n/eatingSpeed); // formula to calculate hr required for eating n bananas.
+            
+            if(remHr < 0){
+                return false;
+            }
         }
 
-        return false;
+        return true;
     }
 
     private int findMaxBananasPerHr(int[] arr) {

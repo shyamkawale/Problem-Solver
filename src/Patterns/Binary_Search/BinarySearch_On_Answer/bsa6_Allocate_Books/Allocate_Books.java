@@ -6,7 +6,7 @@ import Helpers.ProblemSolver;
 /*
 https://www.naukri.com/code360/problems/allocate-books_1090540
 
-Given an array ‘arr of integer numbers, ‘ar[i]’ represents the number of pages in the ‘i-th’ book. 
+Given an array ‘arr of integer numbers, ‘arr[i]’ represents the number of pages in the ‘i-th’ book. 
 There are a ‘m’ number of students, and the task is to allocate all the books to the students.
 Allocate books in such a way that:
 1) Each student gets at least one book.
@@ -68,6 +68,7 @@ public class Allocate_Books extends ProblemSolver {
         return res;
     }
 
+    // why for 72 = studCnt = 4!!! so its comming true!!
     private boolean isPossibleToDistributeBooks(int[] arr, int i, int m) {
         int cnt = 0;
         int pageSum = 0;
@@ -81,6 +82,35 @@ public class Allocate_Books extends ProblemSolver {
         cnt++;
 
         return cnt <= m;
+    }
+
+    // why for 72 = studCnt = 4!!! so its comming true!!
+    private boolean isPossibleToDistributeBooks2(int[] books, int maxPgCnt, int totStud) {
+        int studCnt = 0;
+        int pgSum = 0;
+        int end = 0;
+        while(end < books.length){
+            pgSum = pgSum + books[end];
+
+            if(pgSum == maxPgCnt){
+                studCnt++;
+                pgSum = 0;
+                end++;
+            }
+            else if(pgSum < maxPgCnt){
+                end++;
+            }
+            else if(pgSum > maxPgCnt){
+                studCnt++;
+                pgSum = 0;
+            }
+        }
+
+        if(pgSum != 0){
+            studCnt++;
+        }
+
+        return studCnt >= totStud;
     }
 
 }
