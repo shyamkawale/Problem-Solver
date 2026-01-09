@@ -144,8 +144,9 @@ End-Part = Start-Part
 7. https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/ (done)
 8. https://leetcode.com/problems/minimum-average-difference/description/ (done)
 9. https://leetcode.com/problems/longest-subsequence-with-limited-sum/description/ (done)
-10. https://leetcode.com/problems/maximum-subarray/submissions/
+10. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 11. [Find Maximum Balanced XOR Subarray Length](https://leetcode.com/problems/find-maximum-balanced-xor-subarray-length/) [Prefix XOR, Prefix Even-Odd-Count]
+12. [Maximum Frequency After Subarray Operation](https://leetcode.com/problems/maximum-frequency-after-subarray-operation/) [Freq Prefix] [Good Problem - try to do O(N)] # towrite 
 
 ## Does not look Prefix Sum
 

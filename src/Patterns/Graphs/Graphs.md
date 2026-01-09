@@ -590,3 +590,6 @@ Other Problems:
 3. https://leetcode.com/problems/find-the-town-judge/description/ (#todo)
 
 
+https://leetcode.com/problems/power-grid-maintenance/
+
+https://leetcode.com/problems/minimize-maximum-component-cost/description/

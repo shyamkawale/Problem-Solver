@@ -19,6 +19,7 @@ A **Heap** is a complete binary tree data structure where:
 3. [Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) - Add elements and find Kth largest dynamically
 4. [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) - Maintain median of streaming data
 5. [Design Twitter](https://leetcode.com/problems/design-twitter/) `#TODO`
+6. [Task Scheduler](https://leetcode.com/problems/task-scheduler/) `#TODO`
 
 ---
 

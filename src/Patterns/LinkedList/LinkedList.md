@@ -46,7 +46,7 @@
     3. Insert Last Element
     4. Remove Element At Position
     5. Remove Last Element
-    6. Remove Node (#TODO 📅)
+    6. Remove Node
     7. [Remove Kth Node From Last](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
     8. [Check if Palindrome](https://leetcode.com/problems/palindrome-linked-list/)
     9. Reverse List Between Left and Right (Both Included)
@@ -54,36 +54,36 @@
     11. Rotate List K times Right
     12. Rotate List K times Left
     13. Swap 2 nodes (#TODO 📅)
-    14. [Swap nodes in Pair](https://leetcode.com/problems/swap-nodes-in-pairs/) #TODO 📅 ??
-    15. [Sort List](https://leetcode.com/problems/sort-list/) (#TODO 📅)
-    16. Sort a LL of 0's 1's and 2's by changing links #TODO 📅 ??
+    14. [Swap nodes in Pair](https://leetcode.com/problems/swap-nodes-in-pairs/)
+    15. [Sort List](https://leetcode.com/problems/sort-list/)
+    16. [Sort a LL of 0's 1's and 2's](https://takeuforward.org/plus/dsa/problems/sort-a-ll-of-0's-1's-and-2's)
 2. Reverse Singly LinkedList
 3. Reverse Doubly LinkedList
 4. [Find Middle Element in LinkedList](https://leetcode.com/problems/middle-of-the-linked-list/)
 
-## Other
+## LinkedList Questions
 
 1. [Detect Cycle in LinkedList](https://leetcode.com/problems/linked-list-cycle/)
 2. [Intersection of Two LinkedList](https://leetcode.com/problems/intersection-of-two-linked-lists/)
-3. Odd Even Value Segregation in LinkedList
-4. [Add Two Numbers](https://leetcode.com/problems/add-two-numbers-ii/) #TODO 📅 done
+3. [Odd Even Value Segregation in LinkedList](https://takeuforward.org/data-structure/segregate-even-and-odd-nodes-in-linkedlist)
+4. [Add Two Numbers](https://leetcode.com/problems/add-two-numbers-ii/)
 5. [Add 1 to LinkedList Number](https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1)
 6. [Insert Greatest Common Divisor in LinkedList](https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/)
 7. [Split LinkedList in K Parts](https://leetcode.com/problems/split-linked-list-in-parts/)
 
-8. [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) #TODO 📅 done
-9. [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) #TODO 📅 done
-10. [Remove Duplicate from Sorted DLL](https://www.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1) #TODO 📅
-11. [Find pairs with given sum in doubly linked list](https://www.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1) #TODO 📅
-12. [Flattening a Linked List](https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1) #TODO 📅
-13. [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) #TODO 📅
-14. [Reorder List](https://leetcode.com/problems/reorder-list/) #TODO 📅
+8. [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
+9. [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
+10. [Remove Duplicate from Sorted DLL](https://www.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1)
+11. [Find pairs with given sum in doubly linked list](https://www.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1)
+12. [Flattening a Linked List](https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1) [need PriorityQueue]
+13. [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
+14. [Reorder List](https://leetcode.com/problems/reorder-list/)
+15. [Merge Two Sorted LinkedList](https://leetcode.com/problems/merge-two-sorted-lists/)
+16. [Next Greater Node in LinkedList](https://leetcode.com/problems/next-greater-node-in-linked-list) [Monotonic Stack - nge]
 
-## Other Concepts
+## Covered In Other Concepts:
+1. [Merge K Sorted LinkedList](https://leetcode.com/problems/merge-k-sorted-lists/) [Heaps - mks6_Merge_K_Sorted_Lists]
 
-1. [Merge Two Sorted LinkedList](https://leetcode.com/problems/merge-two-sorted-lists/) #TODO 📅
-2. [Merge K Sorted LinkedList](https://leetcode.com/problems/merge-k-sorted-lists/) #TODO 📅
-3. [Next Greater Node in LinkedList](https://leetcode.com/problems/next-greater-node-in-linked-list) #TODO 📅
 
 ## Easy not written:
 

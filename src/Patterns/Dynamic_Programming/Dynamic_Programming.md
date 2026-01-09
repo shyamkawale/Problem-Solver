@@ -240,6 +240,9 @@ If dp[i][j] depends on dp[i-1][...], then i should be outer.
 
 new problems:
 https://leetcode.com/problems/ones-and-zeroes/description/
+https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subsequences/
+https://leetcode.com/problems/paint-house-iv/description/
+
 
 
 Greedy also possible:
