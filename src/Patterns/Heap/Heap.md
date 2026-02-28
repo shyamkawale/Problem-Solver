@@ -56,6 +56,8 @@ Merge multiple sorted arrays/lists efficiently.
 6. [Maximum Sum Combination](https://www.interviewbit.com/problems/maximum-sum-combinations/) - Optimal pairing
 7. [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/) `#TODO` `#HARD` - Window across multiple lists
 
+8. [Maximum Sum with at most K elements](https://leetcode.com/problems/maximum-sum-with-at-most-k-elements/) [Greedy lmao]
+
 ### 4. Two Heaps Pattern (Find Median)
 Maintain two heaps to efficiently find median of streaming/window data.
 

@@ -37,18 +37,18 @@ public class Minimum_Cost_to_Make_Two_Binary_Strings_Equal extends ProblemSolver
         }
 
         int pairsCnt = Math.min(typeA, typeB);
-        long pairsCost = (long) Math.min(2*flipCost, swapCost)* (long) pairsCnt;
+        long pairsCost = Math.min(2*flipCost, swapCost)*pairsCnt;
 
         int remMis = Math.max(typeA, typeB) - Math.min(typeA, typeB);
         long remCost = 0L;
-        if(2*flipCost > crossCost + swapCost) {
-            remCost = (long) (crossCost + swapCost)* (long) (remMis/2) + (long) flipCost* (long) (remMis%2);
+        if(2*flipCost > crossCost + swapCost) { // cross + swap (2 operations - that is why we are comparing it with 2*flipcost)
+            remCost = (crossCost + swapCost)*(remMis/2) + flipCost*(remMis%2); // 2 operation so simgle bit can remain.. (example if 3 typeA bits are unmatched)
         }
         else {
-            remCost = (long) remMis* (long) flipCost;
+            remCost = remMis*flipCost; // flipping bit
         }
 
-        return (long) pairsCost + (long) remCost;
+        return pairsCost + remCost;
     }
 
 }

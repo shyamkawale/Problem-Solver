@@ -56,6 +56,8 @@ public int slidingWindowFixedSize(int[] arr, int winSize) {
 5. [Maximum Number of Occurrences of a Substring](https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring)
 6. [Maximum Points You Can Obtain from Cards](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards)
 
+7. [Find Special Substring of Length K](https://leetcode.com/problems/find-special-substring-of-length-k/) [easy]
+
 
 #### Techniques used:
 1. Fixed Sliding Window Template

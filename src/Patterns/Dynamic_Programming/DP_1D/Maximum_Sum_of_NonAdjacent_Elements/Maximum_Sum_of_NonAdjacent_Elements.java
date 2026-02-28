@@ -67,6 +67,20 @@ public class Maximum_Sum_of_NonAdjacent_Elements extends ProblemSolver {
         return Math.max(pick, notPick);
     }
 
+    /**
+     * Solves the House Robber problem using memoization (top-down dynamic programming).
+     * 
+     * This method finds the maximum sum of non-adjacent elements in the given array.
+     * It uses memoization to store computed results and avoid redundant calculations.
+     * 
+     * @param nums the array of integers representing house values
+     * @return the maximum sum of non-adjacent elements
+     * 
+     * Time Complexity: O(n) - Each element is computed only once and stored in the dp array.
+     *                  Subsequent lookups are O(1). Total calls to helper3 = n.
+     * Space Complexity: O(n) - For the dp memoization array and O(n) for the recursion call stack.
+     *                   Total: O(n)
+     */
     private int houseRob_memo(int[] nums) {
         int n = nums.length;
         int[] dp = new int[n];

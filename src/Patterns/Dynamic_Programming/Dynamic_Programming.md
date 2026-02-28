@@ -243,6 +243,13 @@ https://leetcode.com/problems/ones-and-zeroes/description/
 https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subsequences/
 https://leetcode.com/problems/paint-house-iv/description/
 
+https://leetcode.com/problems/number-of-alternating-xor-partitions/description/ [3d dp TLE, 2D DP + PrefixXOR]
+
+https://leetcode.com/problems/delete-operation-for-two-strings/description/
+https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/description/
+https://leetcode.com/problems/largest-divisible-subset/description/
+https://leetcode.com/problems/shortest-common-supersequence/description/
+https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/description/
 
 
 Greedy also possible:

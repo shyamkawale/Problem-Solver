@@ -1,0 +1,6 @@
+"abcdbaefab" & 2
+"cdefdc" & 3
+"abeabe" & 0
+"abbddacc" & 3
+"abab" & 1
+"abbacbd" & 7

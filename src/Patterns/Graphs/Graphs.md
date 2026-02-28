@@ -272,9 +272,12 @@ for(int i=1; i<n+1; i++) {
 ```
 ### No. of Connected Components Problems
 1. [Number of Provinces](https://leetcode.com/problems/number-of-provinces)
-2. [Number of Islands](https://takeuforward.org/data-structure/number-of-islands/) (leetcode premium), (check part 2 of)
+2. [Number of Islands](https://leetcode.com/problems/number-of-islands/)
 
 ## BFS Traversal
+
+**TC:** O(V + E) — Visit each vertex once, process each edge once  
+**SC:** O(V) — Visited array + Queue (worst case: all vertices in queue)
 
 ```java
 private List<Integer> bfs(int n, List<List<Integer>> adjList) {
@@ -290,7 +293,7 @@ private List<Integer> bfs(int n, List<List<Integer>> adjList) {
         res.add(polledNode);
 
         for(int neighbor: adjList.get(polledNode)) {
-            if(!visited.contains(neighbor)) {
+            if(vis[neighbor] == 0) {
                 queue.offer(neighbor);
                 vis[neighbor] = 1;
             }
@@ -302,6 +305,10 @@ private List<Integer> bfs(int n, List<List<Integer>> adjList) {
 ```
 
 ## DFS Traversal
+
+**TC:** O(V + E) — Visit each vertex once, process each edge once  
+**SC:** O(V) — Visited array + Recursion stack (worst case: skewed graph)
+
 ```java
 private void dfs(int node, int[] vis, List<List<Integer>> adjList, List<Integer> res) {
     vis[node] = 1;
@@ -339,11 +346,12 @@ Problem Types:
 ### Matrix Graph Problems
 
 1. [Flood Fill](https://leetcode.com/problems/flood-fill)
-2. [Number of Islands](https://leetcode.com/problems/number-of-islands)
-3. [Rotting Oranges](https://leetcode.com/problems/rotting-oranges) **[MultiSource BFS]** [revisit]
+2. [Rotting Oranges](https://leetcode.com/problems/rotting-oranges) **[MultiSource BFS]** [revisit]
 4. [Distance of Nearest Zero](https://leetcode.com/problems/01-matrix) [MultiSource BFS] [revisit]
 5. [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) #towrite
 6. [No. of Enclaves](https://leetcode.com/problems/number-of-enclaves/) #towrite
+
+7. [As Far From Land As Possible](https://leetcode.com/problems/as-far-from-land-as-possible/) [easy]
 
 
 ## Bipartite Graph
