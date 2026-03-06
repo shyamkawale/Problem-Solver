@@ -5,6 +5,20 @@ import java.util.Arrays;
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
 
+/*
+https://www.naukri.com/code360/problems/number-of-subsets_3952532
+
+You are given an array 'arr' of size 'n' containing positive integers and a target sum 'k'.
+
+Find the number of ways of selecting the elements from the array 
+such that the sum of chosen elements is equal to the target 'k'.
+Since the number of ways can be very large, print it modulo 10 ^ 9 + 7.
+
+Example:
+Input: 'arr' = [1, 1, 4, 5]
+Output: 3
+Explanation: The possible ways are: [1, 4], [1, 4], [5]
+*/
 public class Count_subsets_with_sum_K extends ProblemSolver {
 
     public static void main(String[] args) {
@@ -28,12 +42,15 @@ public class Count_subsets_with_sum_K extends ProblemSolver {
     }
 
     private int helper1(int n, int target, int[] nums) {
-        if(target == 0) {
-            return 1;
-        }
+        // if(target == 0) {
+        //     return 1;
+        // }
+        // if(n==0) {
+        //     return nums[0] == target ? 1 : 0;
+        // }
 
-        if(n==0) {
-            return nums[0] == target ? 1 : 0;
+        if(n < 0) {
+            return target == 0 ? 1 : 0;
         }
 
         int notPick = helper1(n-1, target, nums);

@@ -36,6 +36,7 @@ public class Cheapest_Flights_Within_K_Stops extends ProblemSolver {
         Arrays.fill(price, Integer.MAX_VALUE);
         price[srcNode] = 0;
 
+        // node price stops
         Queue<int[]> queue = new PriorityQueue<>((a, b) -> {
             if(a[2] != b[2]) {
                 return a[2] - b[2]; // sort by stops

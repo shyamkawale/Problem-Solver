@@ -21,14 +21,13 @@ public class Find_ShortestPath_in_Undirected_Graph extends ProblemSolver {
         int[][] edges = DataConvertor.to2DIntArray(args[2]);
         List<List<Integer>> adjList = GraphsWrapper.createUndirectedGraph(n, edges);
 
-        int[] res1 = findShortestPathInUndirectedGraph_Queue(n, srcNode, adjList);
+        int[] res1 = findShortestPathInUndirectedUnWeightedGraph_Queue(n, srcNode, adjList);
         System.out.println(Arrays.toString(res1));
     }
 
-    // Djiktras - Queue Approach
-    private int[] findShortestPathInUndirectedGraph_Queue(int n, int srcNode, List<List<Integer>> adjList) {
-        int[] dist = new int[n]; // we don't need vis array as dist array will act as visited array (dist =
-                                 // infinity will be non visited)
+    // BFS - as weights are same(unit weight), the node when first reaches is the shortest path
+    private int[] findShortestPathInUndirectedUnWeightedGraph_Queue(int n, int srcNode, List<List<Integer>> adjList) {
+        int[] dist = new int[n];
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[srcNode] = 0;
 

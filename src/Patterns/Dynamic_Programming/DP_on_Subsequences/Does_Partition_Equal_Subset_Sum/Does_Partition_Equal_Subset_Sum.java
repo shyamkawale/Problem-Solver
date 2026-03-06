@@ -5,6 +5,25 @@ import java.util.Arrays;
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
 
+/*
+https://leetcode.com/problems/partition-equal-subset-sum/description
+
+Given an integer array nums, 
+return true if you can partition the array into two subsets
+such that the sum of the elements in both subsets is equal or false otherwise.
+
+Example 1:
+Input: nums = [1,5,11,5]
+Output: true
+Explanation: The array can be partitioned as [1, 5, 5] and [11].
+
+Example 2:
+Input: nums = [1,2,3,5]
+Output: false
+Explanation: The array cannot be partitioned into equal sum subsets.
+
+TRICK: target = sum/2;
+*/
 public class Does_Partition_Equal_Subset_Sum extends ProblemSolver {
 
     public static void main(String[] args) {

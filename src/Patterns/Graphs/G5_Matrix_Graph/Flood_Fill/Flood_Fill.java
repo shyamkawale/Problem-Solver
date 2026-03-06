@@ -45,6 +45,8 @@ public class Flood_Fill extends ProblemSolver {
         MatrixWrapper.printMatrix(res);
     }
 
+    // BFS solution
+    // TC: O(V+E)
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
         int row = image.length;
         int col = image[0].length;

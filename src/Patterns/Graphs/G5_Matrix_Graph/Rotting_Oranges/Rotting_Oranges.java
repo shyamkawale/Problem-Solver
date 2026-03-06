@@ -9,7 +9,17 @@ import Helpers.ProblemSolver;
 /*
 https://leetcode.com/problems/rotting-oranges/
 
- */
+You are given an m x n grid where each cell can have one of three values:
+
+0 representing an empty cell,
+1 representing a fresh orange, or
+2 representing a rotten orange.
+Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.
+
+Return the minimum number of minutes that must elapse until no cell has a fresh orange. 
+If this is impossible, return -1.
+
+*/
 public class Rotting_Oranges extends ProblemSolver {
     public static void main(String[] args) {
         new Rotting_Oranges().readInput();
@@ -26,55 +36,55 @@ public class Rotting_Oranges extends ProblemSolver {
     public int orangesRotting(int[][] grid) {
         int row = grid.length;
         int col = grid[0].length;
-        int res = -1;
+        int minTimeToRot = -1;
         int freshCount = 0;
 
         Queue<int[]> queue = new ArrayDeque<>();
-        for(int r=0; r<row; r++) {
-            for(int c=0; c<col; c++) {
-                if(grid[r][c] == 2) {
-                    queue.offer(new int[]{r, c});
+        for (int r = 0; r < row; r++) {
+            for (int c = 0; c < col; c++) {
+                if (grid[r][c] == 2) {
+                    queue.offer(new int[] { r, c });
                 }
-                if(grid[r][c] == 1) {
+                if (grid[r][c] == 1) {
                     freshCount++;
                 }
             }
         }
 
-        if(freshCount == 0) {
+        if (freshCount == 0) {
             return 0;
         }
 
-        res = bfs(grid, queue);
+        minTimeToRot = bfs(grid, queue);
 
-        for(int r=0; r<row; r++) {
-            for(int c=0; c<col; c++) {
-                if(grid[r][c] == 1) {
+        for (int r = 0; r < row; r++) {
+            for (int c = 0; c < col; c++) {
+                if (grid[r][c] == 1) {
                     return -1;
                 }
             }
         }
 
-        return res;
+        return minTimeToRot;
     }
 
     public int bfs(int[][] grid, Queue<int[]> queue) {
-        int[][] dir = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+        int[][] dir = { { -1, 0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } };
         int row = grid.length;
         int col = grid[0].length;
         int time = -1;
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             int size = queue.size();
-            for(int s=0; s<size; s++) {
+            for (int s = 0; s < size; s++) {
                 int[] polledNode = queue.poll();
-                for(int i=0; i<dir.length; i++) {
+                for (int i = 0; i < dir.length; i++) {
                     int nr = polledNode[0] + dir[i][0];
                     int nc = polledNode[1] + dir[i][1];
 
-                    if(isValidIdx(nr, row) && isValidIdx(nc, col) && grid[nr][nc] == 1) {
+                    if (isValidIdx(nr, row) && isValidIdx(nc, col) && grid[nr][nc] == 1) {
                         grid[nr][nc] = 2;
-                        queue.offer(new int[]{nr, nc});
+                        queue.offer(new int[] { nr, nc });
                     }
                 }
             }

@@ -39,7 +39,7 @@ public class Detect_Cycle_in_DirectedGraph extends ProblemSolver {
         int[] pathVis = new int[n];
         for (int i = 0; i < n; i++) {
             if (vis[i] == 0) {
-                if (dfs(i, -1, adjList, vis, pathVis)) {
+                if (dfs(i, adjList, vis, pathVis)) {
                     return true;
                 }
             }
@@ -47,13 +47,13 @@ public class Detect_Cycle_in_DirectedGraph extends ProblemSolver {
         return false;
     }
 
-    private boolean dfs(int currNode, int parentNode, List<List<Integer>> adjList, int[] vis, int[] pathVis) {
+    private boolean dfs(int currNode, List<List<Integer>> adjList, int[] vis, int[] pathVis) {
         vis[currNode] = 1;
         pathVis[currNode] = 1;
 
         for (int neighbor : adjList.get(currNode)) {
             if (vis[neighbor] == 0) {
-                if (dfs(neighbor, currNode, adjList, vis, pathVis)) {
+                if (dfs(neighbor, adjList, vis, pathVis)) {
                     return true;
                 }
             }

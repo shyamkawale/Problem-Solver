@@ -5,6 +5,18 @@ import java.util.Arrays;
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
 
+/*
+ * 0/1 Knapsack Problem
+ * https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1
+ * 
+ * Given N items where each item has a weight and a value, and a knapsack with capacity W.
+ * Select items to maximize total value without exceeding knapsack capacity.
+ * Each item can be picked at most once (0/1 choice).
+ * 
+ * Example:
+ * weights = [1, 2, 3], values = [10, 15, 40], capacity = 6
+ * Pick items with weights [1, 2, 3] → total weight = 6, total value = 65
+ */
 public class Knapsack_0_1 extends ProblemSolver {
 
     public static void main(String[] args) {
@@ -26,6 +38,9 @@ public class Knapsack_0_1 extends ProblemSolver {
         System.out.println(res1 + " " + res2 + " " + res3 + " " + res4 + " " + res5);
     }
 
+    // Pure Recursion: Try pick/not-pick for each item from last to first
+    // TC: O(2^n) - exponential, explores all subsets
+    // SC: O(n) - recursion stack depth
     private int knapsack01_rec(int n, int[] weight, int[] value, int bagWeight) {
         return helper1(n-1, weight, value, bagWeight);
     }
@@ -48,6 +63,9 @@ public class Knapsack_0_1 extends ProblemSolver {
         return Math.max(notPick, pick);
     }
 
+    // Memoization (Top-Down DP): Cache results for (index, remainingCapacity) pairs
+    // TC: O(n * W) - each state computed once
+    // SC: O(n * W) for dp array + O(n) recursion stack
     private int knapsack01_memo(int n, int[] weight, int[] value, int bagWeight) {
         int[][] dp = new int[n][bagWeight+1];
         for(int i=0; i<n; i++) {
@@ -80,6 +98,9 @@ public class Knapsack_0_1 extends ProblemSolver {
         return dp[n][bagWeight];
     }
 
+    // Tabulation (Bottom-Up DP): Fill dp table iteratively
+    // TC: O(n * W) - iterate through all states
+    // SC: O(n * W) - 2D dp array
     private int knapsack01_tabu(int n, int[] weight, int[] value, int bagWeight) {
         int[][] dp = new int[n][bagWeight+1];
 
@@ -109,9 +130,11 @@ public class Knapsack_0_1 extends ProblemSolver {
         return dp[n-1][bagWeight];
     }
 
+    // Space Optimized (Two Arrays): Only keep previous row since dp[i] depends only on dp[i-1]
+    // TC: O(n * W) - iterate through all states
+    // SC: O(W) - two 1D arrays
     private int knapsack01_tabu_op1(int n, int[] weight, int[] value, int bagWeight) {
         int[] prev = new int[bagWeight+1];
-        int[] curr = new int[bagWeight+1];
 
         // for the first element initialize for all weights
         for(int wt=0; wt<=bagWeight; wt++) {
@@ -119,6 +142,7 @@ public class Knapsack_0_1 extends ProblemSolver {
         }
 
         for(int i=1; i<n; i++) {
+            int[] curr = new int[bagWeight+1]; // Create new array each iteration to avoid aliasing
             for(int wt=0; wt<=bagWeight; wt++) {
                 int notPick = prev[wt];
                 int pick = 0;
@@ -131,9 +155,14 @@ public class Knapsack_0_1 extends ProblemSolver {
             prev = curr;
         }
 
-        return curr[bagWeight];
+        return prev[bagWeight]; // Return prev (handles n=1 edge case)
     }
 
+    // Single Array Optimization: Traverse RIGHT to LEFT to avoid using updated values
+    // TC: O(n * W) - iterate through all states
+    // SC: O(W) - single 1D array
+    // Key insight: dp[i][wt] depends on dp[i-1][wt] and dp[i-1][wt - weight[i]] (both from prev row, left side)
+    // By going right to left, we ensure we read prev row values before overwriting them
     private int knapsack01_tabu_op2(int n, int[] weight, int[] value, int bagWeight) {
         int[] curr = new int[bagWeight+1];
 

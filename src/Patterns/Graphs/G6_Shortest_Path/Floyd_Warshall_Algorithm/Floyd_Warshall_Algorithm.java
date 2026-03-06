@@ -32,7 +32,7 @@ public class Floyd_Warshall_Algorithm extends ProblemSolver {
                 if(r == c || adjMat[r][c] != 0) {
                     dist[r][c] = adjMat[r][c];
                 }
-                else{
+                else {
                     dist[r][c] = Integer.MAX_VALUE;
                 }
             }

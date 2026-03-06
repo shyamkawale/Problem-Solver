@@ -75,6 +75,7 @@ public class Dijktras_Algorithm extends ProblemSolver {
             int currNode = polledNode[0];
             int currWeight = polledNode[1];
 
+            // becoz dist of currNode is calculated earlier(and first calculated dist is always shortest dist)
             if (currWeight != dist[currNode]) {
                 continue;
             }

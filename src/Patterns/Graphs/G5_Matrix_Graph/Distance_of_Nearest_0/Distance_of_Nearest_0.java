@@ -9,6 +9,13 @@ import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
 import Helpers.DataStructure.Matrix.MatrixWrapper;
 
+/*
+https://leetcode.com/problems/01-matrix/description/
+
+Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell.
+
+The distance between two cells sharing a common edge is 1.
+*/
 public class Distance_of_Nearest_0 extends ProblemSolver {
 
     public static void main(String[] args) {
@@ -19,12 +26,13 @@ public class Distance_of_Nearest_0 extends ProblemSolver {
     public void processParameters(String[] args) {
         int[][] mat = DataConvertor.to2DIntArray(args[0]);
 
-        // int[][] res1 = updateMatrix1(mat); // commented as gives memoryoverflow error for big inputs
+        int[][] res1 = updateMatrix1(mat);
         int[][] res2 = updateMatrix2(mat);
         int[][] res3 = updateMatrix3(mat);
         int[][] res4 = updateMatrix4(mat);
 
-        // MatrixWrapper.printMatrix(res1);
+        MatrixWrapper.printMatrix(res1);
+        System.out.println();
         MatrixWrapper.printMatrix(res2);
         System.out.println();
         MatrixWrapper.printMatrix(res3);
@@ -34,6 +42,7 @@ public class Distance_of_Nearest_0 extends ProblemSolver {
 
     // Sol1: BFS on every 1 to find distance till 0
     // very less efficient....
+    // TC: O(r*c * O(r*c + 2*r*c))
     public int[][] updateMatrix1(int[][] mat) {
         int row = mat.length;
         int col = mat[0].length;
@@ -50,6 +59,7 @@ public class Distance_of_Nearest_0 extends ProblemSolver {
         return res;
     }
 
+    // TC: O(V + E) => O(r*c + 2*r*c)
     public int bfs(int r, int c, int[][] mat) {
         int row = mat.length;
         int col = mat[0].length;
@@ -76,6 +86,7 @@ public class Distance_of_Nearest_0 extends ProblemSolver {
                         }
                         if (!visited.contains(col * nr + nc)) {
                             queue.offer(col * nr + nc);
+                            visited.add(col * nr + nc);
                         }
                     }
                 }
@@ -90,6 +101,7 @@ public class Distance_of_Nearest_0 extends ProblemSolver {
     }
 
     // Sol 2: MultiSource BFS + Pair to store steps(Storing all 0s and then travelling to update 1s with steps)
+    // TC: O(r*c + r*c + r*c)
     public int[][] updateMatrix2(int[][] mat) {
         int row = mat.length;
         int col = mat[0].length;

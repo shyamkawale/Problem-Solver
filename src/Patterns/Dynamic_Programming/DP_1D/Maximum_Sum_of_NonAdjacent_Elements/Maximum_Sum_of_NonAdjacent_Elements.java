@@ -5,6 +5,18 @@ import java.util.Arrays;
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
 
+/*
+https://leetcode.com/problems/house-robber/description/
+
+You are a professional robber planning to rob houses along a street. 
+Each house has a certain amount of money stashed, 
+the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected 
+and it will automatically contact the police if two adjacent houses were broken into on the same night.
+
+Given an integer array nums representing the amount of money of each house, 
+return the maximum amount of money you can rob tonight without alerting the police.
+
+*/
 public class Maximum_Sum_of_NonAdjacent_Elements extends ProblemSolver {
 
     public static void main(String[] args) {
@@ -146,5 +158,31 @@ public class Maximum_Sum_of_NonAdjacent_Elements extends ProblemSolver {
         }
 
         return curr;
+    }
+
+    public int rob(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, -1);
+
+        return helper(0, nums, dp);
+    }
+
+    private int helper(int curr, int[] nums, int[] dp) {
+        int len = nums.length;
+
+        if(curr >= len) {
+            return 0;
+        }
+
+        if(dp[curr] != -1) {
+            return dp[curr];
+        }
+
+        int pick = nums[curr] + helper(curr+2, nums, dp);
+        int notPick = 0 + helper(curr+1, nums, dp);
+
+        dp[curr] = Math.max(pick, notPick);
+        return dp[curr];
     }
 }

@@ -4,7 +4,19 @@ import java.util.Arrays;
 
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
+/*
+https://www.naukri.com/code360/problems/ninja-s-training_3621003
 
+Ninja is planing this ‘N’ days-long training schedule. 
+Each day, he can perform any one of these three activities. 
+(Running, Fighting Practice or Learning New Moves). 
+Each activity has some merit points on each day. 
+As Ninja has to improve all his skills, he can’t do the same activity in two consecutive days. 
+Can you help Ninja find out the maximum merit points Ninja can earn?
+
+You are given a 2D array of size N*3 ‘POINTS’ with the points corresponding to each day and activity. 
+Your task is to calculate the maximum number of merit points that Ninja can earn.
+*/
 public class Ninjas_Training extends ProblemSolver {
 
     public static void main(String[] args) {

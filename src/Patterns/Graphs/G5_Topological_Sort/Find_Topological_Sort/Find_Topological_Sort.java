@@ -84,7 +84,7 @@ public class Find_Topological_Sort extends ProblemSolver {
     private List<Integer> findTopologicalSort_BFS(int n, List<List<Integer>> adjList) {
         List<Integer> res = new ArrayList<>();
         int[] inDeg = new int[n];
-        Queue<Integer> queue = new ArrayDeque<>();
+        Queue<Integer> queue = new ArrayDeque<>(); // this queue will have no dependency nodes (indeg = 0)
 
         for (List<Integer> list : adjList) {
             for (int v : list) {
@@ -94,7 +94,7 @@ public class Find_Topological_Sort extends ProblemSolver {
 
         for (int i = 0; i < n; i++) {
             if (inDeg[i] == 0) { // Atleast one indegree will be 0 because of DAG
-                queue.offer(i); // jiski dependency zero hai woh dalo queue se (unse suruwat karte..)
+                queue.offer(i); // jiski dependency zero hai woh dalo queue me (unse suruwat karte..)
             }
         }
 

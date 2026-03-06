@@ -3,6 +3,11 @@ package Patterns.Dynamic_Programming.DP_on_Subsequences.Count_partitions_with_gi
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
 
+/*
+https://www.naukri.com/code360/problems/partitions-with-given-difference_3751628
+
+
+*/
 public class Count_partitions_with_given_difference extends ProblemSolver {
 
     public static void main(String[] args) {
@@ -23,7 +28,7 @@ public class Count_partitions_with_given_difference extends ProblemSolver {
     // s1+s2 = sum;
     // s1-s2 = diff;
     // s1+(s1-diff) = sum;
-    //s1 = (sum+diff)/2;
+    // s1 = (sum+diff)/2;
     public int countPartitions(int diff, int[] nums) {
         int len = nums.length;
         int sum = 0;

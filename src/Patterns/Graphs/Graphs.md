@@ -345,11 +345,11 @@ Problem Types:
 
 ### Matrix Graph Problems
 
-1. [Flood Fill](https://leetcode.com/problems/flood-fill)
-2. [Rotting Oranges](https://leetcode.com/problems/rotting-oranges) **[MultiSource BFS]** [revisit]
-4. [Distance of Nearest Zero](https://leetcode.com/problems/01-matrix) [MultiSource BFS] [revisit]
-5. [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) #towrite
-6. [No. of Enclaves](https://leetcode.com/problems/number-of-enclaves/) #towrite
+1. [Flood Fill](https://leetcode.com/problems/flood-fill) **[BFS]**
+2. [Rotting Oranges](https://leetcode.com/problems/rotting-oranges) **[MultiSource BFS]** 
+4. [Distance of Nearest Zero](https://leetcode.com/problems/01-matrix) **[MultiSource BFS]** [Reverse thinking]
+5. [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) **[DFS/BFS]** [Reverse thinking]
+6. [No. of Enclaves](https://leetcode.com/problems/number-of-enclaves/) **[MultiSource BFS]**
 
 7. [As Far From Land As Possible](https://leetcode.com/problems/as-far-from-land-as-possible/) [easy]
 
@@ -358,7 +358,7 @@ Problem Types:
 - Color the graph with 2 colors such that no adjacent nodes has same color (Generally used for Undirected Graph).
 
 - Linear Undirected Graph(Acyclic graph) will always be a Bipartite Graph.
-- Any Undirected Cyclic Graph with all even cycle lengths will always be a Bipartite Graph.
+- Any Undirected Cyclic Graph with all **even cycle lengths** will always be a Bipartite Graph.
 - Any Undirected Cyclic Graph with a odd cycle length will not be a Bipartite Graph.
 
 ### Bipartite Graph Problems:
@@ -388,6 +388,23 @@ If Topo Sort is 1, 2, 3, 4, 5
 then it means that from node 3, nodes 1 & 2 are not reachable
 but from node 3 , nodes 4 & 5 might or might not be reachable...
 
+The arrow points in the direction of execution.
+edge a -> b:
+
+- b depends on a.
+- a must be completed first before you can even start b.
+- a is the prerequisite; b is the dependent.
+
+Indegree literally translates to 
+    - "How many prerequisites/dependencies are blocking me from starting?"
+    - "How many other dependencies I have?"
+
+If Indegree = 0
+    - "Node can start immediately as Node don't have any prerequisites/dependencies"
+
+If Indegree = n
+    = "First process/start n dependencies and then I can be processed"
+
 
 Usecase where it is used:
 Anywhere you have prerequisites or dependencies, topological sort tells you what to do first, second, third… and so on.
@@ -412,7 +429,7 @@ Instruction reordering for optimization without violating dependencies is done u
 
 ## [Detect Cycle in Directed Graph](https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1)
     1. Using DFS
-    2. Using BFS (**Kahn's Algorithm**)
+    2. Using BFS **Kahns Algorithm**
 
 ## Topological sort Problem Pattern
 1. [Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/)
@@ -426,9 +443,9 @@ Relaxation is a fancy term in Graph Algorithm that simply means:
 ## Shortest Path in DAG
 - Find the shortest path in Directed Acyclic Graph.
     - with TopoSort + Relaxation
-    - with BFS + Queue
+    - with BFS + Queue (similar to Dijktras but without priorityQueue)
 
-## Shortest Path in Undirected Graph 
+## Shortest Path in Undirected UnWeighted Graph
 - Find the shortest path in Undirected Graph.
     - with BFS + Queue (First time we reach node will be the shortest path as we have BFS and unit weight..)
 
@@ -447,7 +464,13 @@ Word Ladder 2
 3. Using Set (Greedy BFS Algorithm)
 
 Does not work with -ve Edges. WHY ??
+- Dijkstra marks a node as "done" once popped from PQ, assuming its shortest path is finalized.
+- With -ve edges, a later path through a negative edge could give a shorter distance to an already "done" node.
+- Since Dijkstra won't revisit "done" nodes, it misses the shorter path → incorrect result.
+
 Does not work with -ve cycles. WHY ??
+- A -ve cycle allows infinite reduction of path cost (keep looping to reduce distance).
+- Dijkstra has no mechanism to detect or handle this → either infinite loop or wrong answer.
 
 Time Complexity Analysis of Djiktras Algorithm:
 while loop runs for atmost E times.. so, 

@@ -1,4 +1,4 @@
-package Patterns.Graphs.Find_Eventual_Safe_States;
+package Patterns.Graphs.G5_Topological_Sort.Find_Eventual_Safe_States;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -10,6 +10,10 @@ import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
 import Helpers.DataStructure.Graphs.GraphsWrapper;
 
+/*
+
+
+*/
 public class Find_Eventual_Safe_States extends ProblemSolver {
 
     public static void main(String[] args) {
@@ -78,8 +82,6 @@ public class Find_Eventual_Safe_States extends ProblemSolver {
             if(dfs1(i, new int[n], new int[n], adjList)) {
                 res.add(i);
             }
-
-            // System.out.println(Arrays.toString(pathVis));
         }
 
         return res;
@@ -116,8 +118,6 @@ public class Find_Eventual_Safe_States extends ProblemSolver {
             if(dfs2(i, vis, pathVis, adjList)) {
                 res.add(i);
             }
-
-            // System.out.println(Arrays.toString(pathVis));
         }
 
         return res;

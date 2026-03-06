@@ -33,6 +33,7 @@ public class Path_with_Minimum_Effort extends ProblemSolver {
 
         int[][] dir = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
         Queue<int[]> queue = new PriorityQueue<>((a, b) -> a[2] - b[2]);
+        // r c effort
         queue.offer(new int[]{0, 0, 0});
 
         while(!queue.isEmpty()) {

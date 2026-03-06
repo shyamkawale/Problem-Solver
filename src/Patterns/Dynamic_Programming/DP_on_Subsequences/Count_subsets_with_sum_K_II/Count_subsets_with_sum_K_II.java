@@ -1,11 +1,17 @@
 package Patterns.Dynamic_Programming.DP_on_Subsequences.Count_subsets_with_sum_K_II;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
 
-// here nums[i] can be negative..
+/*
+ * Count subsets with sum K (handles negative numbers and zeros)
+ * 
+ * Key insight: With negative numbers, intermediate sums can be negative or exceed target,
+ * so we use HashMap instead of 2D array for memoization/tabulation.
+ */
 public class Count_subsets_with_sum_K_II extends ProblemSolver {
 
     public static void main(String[] args) {
@@ -23,81 +29,85 @@ public class Count_subsets_with_sum_K_II extends ProblemSolver {
         System.out.println(res1 + " " + res2 + " " + res3);
     }
 
+    // Pure Recursion: Try pick/not-pick for each element
+    // TC: O(2^n) - exponential, explores all subsets
+    // SC: O(n) - recursion stack depth
     private int cntSubsets_rec(int[] nums, int target) {
-        int len = nums.length;
-        return helper1(len - 1, target, nums);
+        return helper1(nums.length - 1, target, nums);
     }
 
     private int helper1(int n, int target, int[] nums) {
-        if (n == 0) {
-            if(nums[0] == target) return 2; // take, not-take
-            else if(target == 0) return 1; // not-take
-            else return 0; // not-possible
+        // Base case: processed all elements
+        if (n < 0) {
+            return target == 0 ? 1 : 0;
         }
 
         int notPick = helper1(n - 1, target, nums);
-        int pick = 0;
-        if (target - nums[n] >= 0) {
-            pick = helper1(n - 1, target - nums[n], nums);
-        }
+        int pick = helper1(n - 1, target - nums[n], nums);
 
         return notPick + pick;
     }
 
+    // Memoization with HashMap: Cache results for (index, target) pairs
+    // TC: O(n * S) where S = range of possible sums
+    // SC: O(n * S) for HashMap storage + O(n) recursion stack
+    @SuppressWarnings("unchecked")
     private int cntSubsets_memo(int[] nums, int target) {
         int len = nums.length;
-        int[][] dp = new int[len][target + 1];
+        Map<Integer, Integer>[] dp = new HashMap[len]; // Array of HashMap
         for (int i = 0; i < len; i++) {
-            Arrays.fill(dp[i], -1);
+            dp[i] = new HashMap<>();
         }
         return helper2(len - 1, target, nums, dp);
     }
 
-    private int helper2(int n, int target, int[] nums, int[][] dp) {
-        if (n == 0) {
-            if(nums[0] == target) return 2; // take, not-take
-            else if(target == 0) return 1; // not-take
-            else return 0; // not-possible
+    private int helper2(int n, int target, int[] nums, Map<Integer, Integer>[] dp) {
+        if (n < 0) {
+            return target == 0 ? 1 : 0;
         }
 
-        if (dp[n][target] != -1) {
-            return dp[n][target];
+        if (dp[n].containsKey(target)) {
+            return dp[n].get(target);
         }
 
         int notPick = helper2(n - 1, target, nums, dp);
-        int pick = 0;
-        if (target - nums[n] >= 0) {
-            pick = helper2(n - 1, target - nums[n], nums, dp);
-        }
+        int pick = helper2(n - 1, target - nums[n], nums, dp);
 
-        if (dp[n][target] == -1) {
-            dp[n][target] = 0;
-        }
-        dp[n][target] = dp[n][target] + notPick + pick;
-        return dp[n][target];
+        int totalWays = notPick + pick;
+        dp[n].put(target, totalWays);
+        return totalWays;
     }
 
+    // Tabulation with HashMap: Build up from index 0, track all achievable sums
+    // TC: O(n * S) where S = range of possible sums
+    // SC: O(S) for HashMap (only keep previous row)
     private int cntSubsets_tabu(int[] nums, int target) {
         int len = nums.length;
-        int[][] dp = new int[len][target + 1];
-        for(int n=0; n<len; n++) {
-            dp[n][0] = 1;
-        }
-        dp[0][nums[0]] = nums[0] == 0 ? 2 : 1;
-
-        for (int n = 1; n < len; n++) {
-            for (int t = 1; t <= target; t++) {
-                int notPick = dp[n - 1][t];
-                int pick = 0;
-                if (t - nums[n] >= 0) {
-                    pick = dp[n - 1][t - nums[n]];
-                }
-
-                dp[n][t] = notPick + pick;
+        
+        // dp[sum] = count of subsets that achieve this sum
+        Map<Integer, Integer> prev = new HashMap<>();
+        
+        // Base: empty subset has sum 0
+        prev.put(0, 1);
+        
+        for (int n = 0; n < len; n++) {
+            Map<Integer, Integer> curr = new HashMap<>();
+            
+            for (Map.Entry<Integer, Integer> entry : prev.entrySet()) {
+                int sum = entry.getKey();
+                int count = entry.getValue();
+                
+                // Not pick: sum stays same
+                curr.merge(sum, count, Integer::sum);
+                
+                // Pick: sum increases by nums[n]
+                curr.merge(sum + nums[n], count, Integer::sum);
             }
+            
+            prev = curr;
         }
-
-        return dp[len - 1][target];
+        
+        return prev.getOrDefault(target, 0);
     }
 
 }

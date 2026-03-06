@@ -128,10 +128,9 @@ tips for tabulation:
 
 1. [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 2. [Frog Jump](https://www.naukri.com/code360/problems/frog-jump_3621012)
-3. [Frog Jump With K Distance](https://takeuforward.org/plus/dsa/dynamic-programming/1d-dp/frog-jump-with-k-distances)
+3. [Frog Jump With K Distance](https://takeuforward.org/data-structure/dynamic-programming-frog-jump-with-k-distances-dp-4)
 4. [Maximum Sum Of NonAdjacent Elements](https://leetcode.com/problems/house-robber/)
 5. [House Robber 2](https://leetcode.com/problems/house-robber-ii/)
-
 6. [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
 
 
@@ -142,7 +141,7 @@ tips for tabulation:
 4. [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
 5. [Minimum Path Sum in Triangular Grid](https://leetcode.com/problems/triangle/)
 6. [Minimum Falling PathSum](https://leetcode.com/problems/minimum-falling-path-sum/)
-7. [Two Ninja Chocolate Pickup](https://www.naukri.com/code360/problems/ninja-and-his-friends_3125885)
+7. [Two Ninja Chocolate Pickup](https://www.naukri.com/code360/problems/ninja-and-his-friends_3125885) [**3D DP**]
 
 
 ## DP on Subsequences / Subsets
