@@ -20,6 +20,9 @@ For NGEE
 stack nature => decreasing => bcz we are keeping greater elems in stack
 while loop logic => remove smaller
 after while loop, peek elem is NGEE!
+
+ex:  [3,  10, 4, 2, 1, 2, 6, 1, 7, 2,  9]
+ans: [10, -1, 6, 6, 2, 6, 7, 7, 9, 9, -1]
 */ 
 public class Next_Nearest_Greater_Element extends ProblemSolver { 
     public static void main(String[] args) { 

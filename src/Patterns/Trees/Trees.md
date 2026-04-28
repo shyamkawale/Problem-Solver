@@ -204,6 +204,7 @@ Types of Binary Tree
 4. [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) ✅ ⭐ HARD
 5. [Max Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/) ✅
 6. [Odd Levels Of Binary Tree](https://leetcode.com/problems/reverse-odd-levels-of-binary-tree) ✅
+7. [Distribute Coins in Binary Tree](https://leetcode.com/problems/distribute-coins-in-binary-tree/) ✅ `DFS + PostOrder` (Tricky)
 
 ---
 
@@ -264,6 +265,7 @@ private void constructParentMap(TreeNode root, Map<TreeNode, TreeNode> parentMap
 **Use when:** BFS/DFS from any node (not just root), or multi-source traversal.
 
 1. [Time for Binary Tree to be Infected](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/)
+2. [Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees)
 
 ```java
 private void createUndirectedGraph(TreeNode root, TreeNode parent, Map<Integer, List<Integer>> adjList) {

@@ -20,6 +20,8 @@ stack nature => increasing => bcz we are keeping smaller elems in stack
 while loop logic => remove greater
 after while loop, peek elem is PSEE!
 
+Ex:  [3, 10, 4,  2,  1, 2, 6,  1, 7, 2, 9]
+ans: [-1, 3, 3, -1, -1, 1, 2, -1, 1, 1, 2]
  */
 public class Previous_Nearest_Smaller_Element extends ProblemSolver { 
     public static void main(String[] args) { 

@@ -30,7 +30,7 @@ public class Design2_Queue_Using_LinkedList {
         public void enqueue(int value) {
             QueueNode temp = new QueueNode(value);
 
-            if(front == null){
+            if(front == null && rear == null){
                 front = temp;
                 rear = temp;
             }
@@ -50,6 +50,9 @@ public class Design2_Queue_Using_LinkedList {
             else{
                 System.out.println(front.val + " Removed From Queue");
                 front = front.next;
+                if(front == null) {
+                    rear = null;
+                }
                 size--;
             }
         }

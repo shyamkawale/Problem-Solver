@@ -134,19 +134,22 @@ End-Part = Start-Part
 2. [Longest Subarray with Sum K](https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1) => variety => Minimum size subarray sum(only +ve elements => so sliding window)
 3. [Contiguous Array](https://leetcode.com/problems/contiguous-array/description/)
 
+[Min Operations To Reduce X to Zero](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/) [easy]
+[Minimum Average Difference](https://leetcode.com/problems/minimum-average-difference/) [easy] [normal prefixsum]
+
 ## Dynamic Sum(condition on sum is given in question) => winSum <= or >= target, maxSum/minSum with len condition
 
-1. [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k)
-2. Longest Subarray with Sum Divisible by K
-3. [Max Subarray Sum with Length Divisible by K](https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k) **
-4. [Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k) ***
-6. https://leetcode.com/problems/make-sum-divisible-by-p/description/ TODO **
-7. https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/ (done)
-8. https://leetcode.com/problems/minimum-average-difference/description/ (done)
-9. https://leetcode.com/problems/longest-subsequence-with-limited-sum/description/ (done)
-10. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
-11. [Find Maximum Balanced XOR Subarray Length](https://leetcode.com/problems/find-maximum-balanced-xor-subarray-length/) [Prefix XOR, Prefix Even-Odd-Count]
+4. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) [prefixSum, kadane Algo]
+5. [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k)
+6. [Longest Subarray with Sum Divisible by K](https://www.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1)
+7. [Max Subarray Sum with Length Divisible by K](https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k) [TRICKY]
+8. [Make Sum Divisible By K](https://leetcode.com/problems/make-sum-divisible-by-p/)
+9. [Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k) [HARD]
+10. [Find Maximum Balanced XOR Subarray Length](https://leetcode.com/problems/find-maximum-balanced-xor-subarray-length/) [Prefix XOR, Prefix Even-Odd-Count]
+
+
 12. [Maximum Frequency After Subarray Operation](https://leetcode.com/problems/maximum-frequency-after-subarray-operation/) [Freq Prefix] [Good Problem - try to do O(N)] # towrite 
+
 
 ## Does not look Prefix Sum
 

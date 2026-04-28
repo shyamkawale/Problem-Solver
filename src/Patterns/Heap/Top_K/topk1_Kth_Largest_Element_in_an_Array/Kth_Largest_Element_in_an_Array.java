@@ -14,7 +14,7 @@ Given an integer array nums and an integer k, return the kth largest element in 
 sol1: Using Sorting TC: O(nlogn)
 sol2: Heap TC: O(nlogk)
 sol3: quick-select(maybe similar to quick sort)
-sol4: counting sort
+sol4: counting sorts
  */
 public class Kth_Largest_Element_in_an_Array extends ProblemSolver {
     public static void main(String[] args) {

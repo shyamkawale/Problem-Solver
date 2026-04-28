@@ -17,3 +17,9 @@ https://leetcode.com/problems/process-string-with-special-operations-i/
 https://leetcode.com/problems/process-string-with-special-operations-ii/description/
 
 [Count Caesar Cipher Pairs](https://leetcode.com/problems/count-caesar-cipher-pairs/description/)
+
+https://leetcode.com/problems/walking-robot-simulation-ii/
+
+https://leetcode.com/problems/minimum-distance-between-three-equal-elements-ii/
+
+https://leetcode.com/problems/champagne-tower/

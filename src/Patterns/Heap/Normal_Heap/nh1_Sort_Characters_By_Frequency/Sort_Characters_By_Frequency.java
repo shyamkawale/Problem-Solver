@@ -47,7 +47,9 @@ public class Sort_Characters_By_Frequency extends ProblemSolver {
         }
 
         Queue<Map.Entry<Character, Integer>> maxHeap = new PriorityQueue<>(
-                (a, b) -> Integer.compare(b.getValue(), a.getValue()));
+            (a, b) -> Integer.compare(b.getValue(), a.getValue())
+        );
+
         for (Map.Entry<Character, Integer> entry : freqMap.entrySet()) {
             maxHeap.offer(entry);
         }
@@ -71,7 +73,9 @@ public class Sort_Characters_By_Frequency extends ProblemSolver {
         }
 
         Queue<Character> maxHeap = new PriorityQueue<>(
-                (a, b) -> Integer.compare(freqMap.get(b), freqMap.get(a)));
+            (a, b) -> Integer.compare(freqMap.get(b), freqMap.get(a))
+        );
+        
         for (Character key : freqMap.keySet()) {
             maxHeap.offer(key);
         }

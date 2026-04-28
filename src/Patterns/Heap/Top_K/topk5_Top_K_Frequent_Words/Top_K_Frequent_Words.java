@@ -1,6 +1,7 @@
 package Patterns.Heap.Top_K.topk5_Top_K_Frequent_Words;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -37,17 +38,58 @@ public class Top_K_Frequent_Words extends ProblemSolver {
         String[] words = DataConvertor.toTypeArray(args[0], String.class);
         int k = DataConvertor.toInt(args[1]);
 
-        List<String> res = topKFrequent(words, k);
-        System.out.println(res);
+        List<String> res1 = topKFrequent_standard(words, k);
+        List<String> res2 = topKFrequent_heap2(words, k);
+        System.out.println(res1 + " " + res2);
     }
 
-    public List<String> topKFrequent(String[] words, int k) {
+    public List<String> topKFrequent_standard(String[] words, int k) {
+        Map<String, Integer> freqMap = new HashMap<String, Integer>();
+        for(String s: words){
+            freqMap.put(s, freqMap.getOrDefault(s, 0)+1);
+        }
+
+        Queue<Map.Entry<String, Integer>> minHeap = new PriorityQueue<Map.Entry<String, Integer>>(new HeapComparator());
+
+        for(Map.Entry<String, Integer> entry: freqMap.entrySet()){
+            minHeap.offer(entry);
+            if(minHeap.size() > k) {
+                minHeap.poll();
+            }
+        }
+
+        List<String> res = new ArrayList<String>();
+
+        while(!minHeap.isEmpty()){
+            res.add(minHeap.poll().getKey());
+        }
+
+        Collections.reverse(res);
+        return res;
+    }
+
+    public class HeapComparator implements Comparator<Map.Entry<String, Integer>>{
+        @Override
+        public int compare(Map.Entry<String, Integer> a, Map.Entry<String, Integer> b){
+            int freqComparison = Integer.compare(a.getValue(), b.getValue());
+
+            if(freqComparison != 0){
+                return freqComparison;
+            }
+
+            int lexicalComparison = b.getKey().compareTo(a.getKey());
+
+            return lexicalComparison;
+        }
+    }
+
+    public List<String> topKFrequent_heap2(String[] words, int k) {
         Map<String, Integer> freqMap = new HashMap<String, Integer>();
         for (String s : words) {
             freqMap.put(s, freqMap.getOrDefault(s, 0) + 1);
         }
 
-        Queue<String> maxHeap = new PriorityQueue<String>(new HeapComparator(freqMap));
+        Queue<String> maxHeap = new PriorityQueue<String>(new HeapComparator2(freqMap));
         for (String key : freqMap.keySet()) {
             maxHeap.offer(key);
         }
@@ -60,10 +102,10 @@ public class Top_K_Frequent_Words extends ProblemSolver {
         return res;
     }
 
-    public class HeapComparator implements Comparator<String> {
+    public class HeapComparator2 implements Comparator<String> {
         Map<String, Integer> freqMap;
 
-        public HeapComparator(Map<String, Integer> freqMap) {
+        public HeapComparator2(Map<String, Integer> freqMap) {
             this.freqMap = freqMap;
         }
 

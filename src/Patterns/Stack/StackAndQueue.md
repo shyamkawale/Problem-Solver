@@ -23,18 +23,18 @@
 ## Normal Stack
 
 1. [Check for balanced paranthesis](https://leetcode.com/problems/valid-parentheses)
-2*. [Score Of Parenthesis](https://leetcode.com/problems/score-of-parentheses) (Tricky)
-2*. [Remove K Balanced Substring](https://leetcode.com/problems/remove-k-balanced-substrings) (tricky)
-2. [Asteroid Collision](https://leetcode.com/problems/asteroid-collision)
-3. [Smallest (Lexicographically) Subsequence of Distinct Characters](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters)
+2. [Score Of Parenthesis](https://leetcode.com/problems/score-of-parentheses) (Tricky)
+3. [Remove K Balanced Substring](https://leetcode.com/problems/remove-k-balanced-substrings) (tricky)
+4. [Asteroid Collision](https://leetcode.com/problems/asteroid-collision)
+5. [Smallest (Lexicographically) Subsequence of Distinct Characters](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters)
     - same as: [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters)
 
     > Concept: **Remove Duplicate Characters so that every letter appears once and only once** ==> means **find the smallest subsequnce of Distinct Characters**
-4. [Find the Most Competitive Subsequence](https://leetcode.com/problems/find-the-most-competitive-subsequence)
+6. [Find the Most Competitive Subsequence](https://leetcode.com/problems/find-the-most-competitive-subsequence)
     - Find Smallest Subsequence of size k
-5. [Remove All Adjacent Duplicates from a String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
-6. [Remove k Adjacent Duplicates from a String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/) (Tricky)
-7. [Minimum Time to Make Rope Colorful](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/) (Easy)
+7. [Remove All Adjacent Duplicates from a String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
+8. [Remove k Adjacent Duplicates from a String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/)
+9. [Minimum Time to Make Rope Colorful](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/) (Easy)
 
 
 TO check
@@ -69,7 +69,7 @@ Next Greater Element I
 
 ## Other
 
-1. [Trapping Rainwater](https://leetcode.com/problems/trapping-rain-water) (not exactly stack) (#toWrite)
+1. [Trapping Rainwater](https://leetcode.com/problems/trapping-rain-water) (not exactly stack)
 2. [Sliding Window maximum](https://leetcode.com/problems/sliding-window-maximum) (done in sliding window - fsw4)
 
 

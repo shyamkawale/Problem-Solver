@@ -17,7 +17,6 @@ A **Heap** is a complete binary tree data structure where:
 1. Design Priority Queue
 2. [Does Array Represent MaxHeap](https://www.geeksforgeeks.org/problems/does-array-represent-heap4345/1) - Validate max heap property
 3. [Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) - Add elements and find Kth largest dynamically
-4. [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) - Maintain median of streaming data
 5. [Design Twitter](https://leetcode.com/problems/design-twitter/) `#TODO`
 6. [Task Scheduler](https://leetcode.com/problems/task-scheduler/) `#TODO`
 

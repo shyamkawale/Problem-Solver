@@ -50,8 +50,9 @@ public class Top_K_Frequent_Elements extends ProblemSolver {
             freqMap.put(n, freqMap.getOrDefault(n, 0) + 1);
         }
 
-        Queue<Map.Entry<Integer, Integer>> minHeap = new PriorityQueue<Map.Entry<Integer, Integer>>(
-                (a, b) -> Integer.compare(a.getValue(), b.getValue()));
+        Queue<Map.Entry<Integer, Integer>> minHeap = new PriorityQueue<>(
+            (a, b) -> Integer.compare(a.getValue(), b.getValue())
+        );
 
         for (Map.Entry<Integer, Integer> entry : freqMap.entrySet()) {
             minHeap.offer(entry);

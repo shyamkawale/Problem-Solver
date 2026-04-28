@@ -44,8 +44,9 @@ public class Find_K_Closest_Elements extends ProblemSolver {
 
         List<Integer> res1 = findClosestElements_UsingSorting(nums, k, x);
         List<Integer> res2 = findClosestElements_UsingHeap(nums, k, x);
-        List<Integer> res3 = findClosestElements_UsingTwoPointers(nums, k, x);
-        System.out.println(res1 + " " + res2 + " " + res3);
+        List<Integer> res3 = findClosestElements_UsingHeap2(nums, k, x);
+        List<Integer> res4 = findClosestElements_UsingTwoPointers(nums, k, x);
+        System.out.println(res1 + " " + res2 + " " + res3 + " " + res4);
     }
 
     // Using Sorting
@@ -142,9 +143,35 @@ public class Find_K_Closest_Elements extends ProblemSolver {
         }
     }
 
+    // Using Heap with lambda comparator
+    // TC: O(nlogk + nlogn)
+    // SC: O(n + n)
+    public List<Integer> findClosestElements_UsingHeap2(int[] nums, int k, int x) {
+        int len = nums.length;
+        Queue<Integer> maxHeap = new PriorityQueue<>((a, b) -> {
+            if(Math.abs(b-x) != Math.abs(a-x)) {
+                return Integer.compare(Math.abs(b-x), Math.abs(a-x));
+            }
+            return Integer.compare(b, a);
+        });
+
+        for(int n: nums) {
+            maxHeap.offer(n);
+            if(maxHeap.size() > k) {
+                maxHeap.poll();
+            }
+        }
+
+        List<Integer> res = maxHeap.stream()
+                                .sorted()
+                                .toList();
+
+        return res;
+    }
+
     // -----------------------------------------------------------------------------------------
 
-    // Two Pointers Approach
+    // Two Pointers Approach (Becoz array is sorted)
     // TC: O(n)
     // SC: O(n)
     public List<Integer> findClosestElements_UsingTwoPointers(int[] nums, int k, int x) {

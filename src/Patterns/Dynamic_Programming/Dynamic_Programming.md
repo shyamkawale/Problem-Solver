@@ -169,6 +169,7 @@ overlapping subproblems:
 1. [Subset Sum Equal to Target](https://www.naukri.com/code360/problems/subset-sum-equal-to-k_1550954)
 2. [Does Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/description)
 3. [Count Subsets with sum K](https://www.naukri.com/code360/problems/number-of-subsets_3952532)
+4. [Minimum Removals to Achieve Target XOR](https://leetcode.com/problems/minimum-removals-to-achieve-target-xor/)
 4. [Count Subsets with sum K with Negative numbers](https://www.naukri.com/code360/problems/number-of-subsets_3952532)
 5. [Count Partitions with given difference](https://www.naukri.com/code360/problems/partitions-with-given-difference_3751628)
 6. [Partition 2 Subset with minimum absolute sum difference]()

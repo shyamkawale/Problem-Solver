@@ -75,6 +75,7 @@ public class Design5_MinStack {
                 minElem = elem;
             } else {
                 minElem = stack.peek().minElem.compareTo(elem) <= 0 ? stack.peek().minElem : elem;
+                // minElem = Math.min(elem, stack.peek().minElem); // not possible becoz elem is Generic Type
             }
             Pair<E> newElem = new Pair<E>(elem, minElem);
             stack.push(newElem);

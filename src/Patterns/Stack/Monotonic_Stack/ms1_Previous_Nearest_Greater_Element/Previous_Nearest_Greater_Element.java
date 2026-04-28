@@ -21,6 +21,8 @@ stack nature => decreasing => bcz we are keeping greater elems in stack
 while loop logic => remove smaller
 after while loop, peek elem is PGEE!
 
+Ex:  [3,  10,  4, 2, 1, 2,  6, 1,  7, 2,  9]
+ans: [-1, -1, 10, 4, 2, 4, 10, 6, 10, 7, 10]
 */
 public class Previous_Nearest_Greater_Element extends ProblemSolver { 
     public static void main(String[] args) { 
@@ -44,7 +46,7 @@ public class Previous_Nearest_Greater_Element extends ProblemSolver {
         // - 7, 5, 4, 2, 1              
         // -------------------------  --> OUT
         //                      (TOP)
-        Deque<Integer> decStack = new ArrayDeque<Integer>();
+        Deque<Integer> decStack = new ArrayDeque<>();
 
         for(int i=0; i<len; i++){
             int currElem = arr[i];

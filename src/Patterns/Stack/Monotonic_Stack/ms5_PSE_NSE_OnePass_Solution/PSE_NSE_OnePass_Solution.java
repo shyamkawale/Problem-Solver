@@ -12,7 +12,7 @@ PSE & NSEE One-Pass
 PSEE & NSE One-Pass
 
 concept: if we traverse from left to right, we will get PSE but no NSE
-solution: calculate PSE and NSE when popping.. 💪💪💪
+solution: calculate PSE and while popping calculate NSE.. 💪💪💪
 logic: when we pop for the popped element, current element is NSE and stack.peek() is PSE. 💡💡💡
 if stack is stil empty then for every poped element length is NSE and stack.peek() is PSE 💡💡💡💡
  */

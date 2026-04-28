@@ -11,7 +11,8 @@ import Helpers.ProblemSolver;
 /*
 https://takeuforward.org/plus/dsa/problems/rearrange-string-k-distance-apart
 
-Given a string s and an integer k, rearrange s such that the same characters are at least distance k from each other. If it is not possible to rearrange the string, return an empty string "".
+Given a string s and an integer k, rearrange s such that the same characters are at least distance k from each other. 
+If it is not possible to rearrange the string, return an empty string "".
 
 Examples:
 Input: s = "aabbcc", k = 3
