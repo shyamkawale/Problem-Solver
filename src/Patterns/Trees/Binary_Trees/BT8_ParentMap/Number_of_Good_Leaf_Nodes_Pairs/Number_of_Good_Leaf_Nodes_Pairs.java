@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
@@ -58,6 +60,14 @@ public class Number_of_Good_Leaf_Nodes_Pairs extends ProblemSolver {
         return res/2;
     }
 
+    /**
+     * Solution 1: Parent-map + graph traversal from each leaf
+     * - Build parent pointers for every node.
+     * - For each leaf, traverse its neighbors (left/right/parent) up to
+     *   `distance` and count reachable leaf nodes.
+     * - Simple and correct because tree paths are unique; may do extra work.
+     */
+
     public void preOrder(TreeNode root, int distance) {
         if (root == null) {
             return;
@@ -107,46 +117,71 @@ public class Number_of_Good_Leaf_Nodes_Pairs extends ProblemSolver {
         constructParentMap(root.right);
     }
 
+    /*
+    Tree DP: https://gemini.google.com/share/cdcfa9a832cc
+    */
+    /**
+     * State Representation: For any given node, we only care about the distances
+     * of all leaf nodes located in its subtree. Since the problem constraint for
+     * distance is usually very small (for example, 1 <= distance <= 10), we can
+     * use a fixed-size integer array of size distance + 1 to represent the
+     * frequency of leaves at each distance.
+     *
+     * Merging Subtrees: At each internal node, we receive the distance
+     * frequency arrays from its left and right children. If a leaf in the left
+     * subtree is at distance i and a leaf in the right subtree is at distance j,
+     * the total distance between them is i + j. If i + j <= distance, we
+     * multiply their frequencies to count the number of valid pairs and add
+     * this to our global total.
+     *
+     * Propagating Upwards: After counting the pairs, we prepare the distance
+     * array for the current node's parent. Every leaf in the current node's
+     * subtree will be one step further away from the parent. Therefore, we
+     * shift the frequencies in our array by exactly one index (i.e.,
+     * parentDist[i + 1] = leftDist[i] + rightDist[i]).
+     */
+    // TC: O(N * D^2) where N is the total number of nodes and D is the distance limit.
+    // SC: O(H * D) where H is the height of the tree.
+    private int goodPairsCount = 0;
     public int countPairs2(TreeNode root, int distance) {
-        return postOrder(root, distance)[11];
+        dfs(root, distance);
+        return goodPairsCount;
     }
 
-    private int[] postOrder(TreeNode currentNode, int distance) {
-        if (currentNode == null) return new int[12];
-        else if (currentNode.left == null && currentNode.right == null) {
-            int[] current = new int[12];
-            // Leaf node's distance from itself is 0
-            current[0] = 1;
-            return current;
+    private int[] dfs(TreeNode node, int distance) {
+        // Array to store the frequency of leaves at distances from 0 to 'distance'
+        int[] dist = new int[distance + 1];
+        
+        if (node == null) {
+            return dist;
         }
 
-        // Leaf node count for a given distance i
-        int[] left = postOrder(currentNode.left, distance);
-        int[] right = postOrder(currentNode.right, distance);
-
-        int[] current = new int[12];
-
-        // Combine the counts from the left and right subtree and shift by
-        // +1 distance
-        for (int i = 0; i < 10; i++) {
-            current[i + 1] += left[i] + right[i];
+        // If it's a leaf node, it is at distance 1 from its immediate parent
+        if (node.left == null && node.right == null) {
+            dist[1] = 1;
+            return dist;
         }
 
-        // Initialize to total number of good leaf nodes pairs from left and right subtrees.
-        current[11] += left[11] + right[11];
+        int[] leftDist = dfs(node.left, distance);
+        int[] rightDist = dfs(node.right, distance);
 
-        // Iterate through possible leaf node distance pairs
-        for (int d1 = 0; d1 <= distance; d1++) {
-            for (int d2 = 0; d2 <= distance; d2++) {
-                if (2 + d1 + d2 <= distance) {
-                    // If the total path distance is less than the given distance limit,
-                    // then add to the total number of good pairs
-                    current[11] += left[d1] * right[d2];
+        // Count valid pairs across the left and right subtrees
+        for (int i = 1; i <= distance; i++) {
+            for (int j = 1; j - i <= distance; j++) {
+                if (leftDist[i] > 0 && rightDist[j] > 0) {
+                    goodPairsCount += leftDist[i] * rightDist[j];
                 }
             }
         }
 
-        return current;
+        // Shift distances by 1 to pass up to the parent node.
+        // We only care about distances up to 'distance - 1' because anything 
+        // strictly greater will exceed the limit when combined at the ancestor level.
+        for (int i = 1; i < distance; i++) {
+            dist[i + 1] = leftDist[i] + rightDist[i];
+        }
+
+        return dist;
     }
 
 }

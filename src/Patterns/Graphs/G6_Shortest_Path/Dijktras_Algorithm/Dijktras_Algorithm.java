@@ -27,8 +27,9 @@ public class Dijktras_Algorithm extends ProblemSolver {
 
         int[] res1 = dijkstrasAlgorithm_Queue(n, srcNode, adjList);
         int[] res2 = dijkstrasAlgorithm_PriorityQueue(n, srcNode, adjList);
-        int[] res3 = dijkstrasAlgorithm_Set(n, srcNode, adjList);
-        System.out.println(Arrays.toString(res1) + " " + Arrays.toString(res2) + " " + Arrays.toString(res3));
+        int[] res3 = dijkstrasAlgorithm_classicalDijkstras(n, srcNode, adjList);
+        int[] res4 = dijkstrasAlgorithm_Set(n, srcNode, adjList);
+        System.out.println(Arrays.toString(res1) + " " + Arrays.toString(res2) + " " + Arrays.toString(res3) + " " + Arrays.toString(res4));
     }
 
     // Approach 1: Using BFS + Queue
@@ -59,6 +60,7 @@ public class Dijktras_Algorithm extends ProblemSolver {
     }
 
     // Approach 2: Using BFS + PriorityQueue
+    // Becoz Dijiktras Algorithm says: "Once a node is popped → it is finalized -> shortest dist for that node is found" 
     // TC: O(V) + O(VlogV + E)
     // Always try to go to the minimal first path.. so reaches any node with minimal
     // path..
@@ -86,6 +88,41 @@ public class Dijktras_Algorithm extends ProblemSolver {
                 if (dist[neighborNode] > currWeight + weight) {
                     dist[neighborNode] = currWeight + weight;
                     queue.offer(new int[] { neighborNode, dist[neighborNode] });
+                }
+            }
+        }
+
+        return dist;
+    }
+
+    // Classical Dijiktras Algorithm
+    private int[] dijkstrasAlgorithm_classicalDijkstras(int n, int srcNode, List<List<Pair<Integer, Integer>>> adjList) {
+        int[] dist = new int[n];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[srcNode] = 0;
+
+        int[] vis = new int[n];
+
+        // PriorityQueue: {distance, node} - sorted by distance (min-heap)
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+        pq.offer(new int[]{0, srcNode});
+
+        while (!pq.isEmpty()) {
+            int[] polled = pq.poll();
+            int currDist = polled[0];
+            int currNode = polled[1];
+
+            if(vis[currNode] == 1) continue;
+            vis[currNode] = 1; // this is where this node is finalized.. 
+
+            for (Pair<Integer, Integer> neighbor : adjList.get(currNode)) {
+                int neighborNode = neighbor.vertex;
+                int weight = neighbor.weight;
+
+                // Relaxation
+                if (vis[neighborNode] == 0 && currDist + weight < dist[neighborNode]) {
+                    dist[neighborNode] = currDist + weight;
+                    pq.offer(new int[]{dist[neighborNode], neighborNode});
                 }
             }
         }

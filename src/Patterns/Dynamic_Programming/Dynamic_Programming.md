@@ -143,6 +143,10 @@ tips for tabulation:
 6. [Minimum Falling PathSum](https://leetcode.com/problems/minimum-falling-path-sum/)
 7. [Two Ninja Chocolate Pickup](https://www.naukri.com/code360/problems/ninja-and-his-friends_3125885) [**3D DP**]
 
+https://leetcode.com/problems/maximum-number-of-points-with-cost/description/ [good one]
+
+https://leetcode.com/problems/maximize-fixed-points-after-deletions/description/ [HARD]
+
 
 ## DP on Subsequences / Subsets
 subsequence => follows order
@@ -169,7 +173,7 @@ overlapping subproblems:
 1. [Subset Sum Equal to Target](https://www.naukri.com/code360/problems/subset-sum-equal-to-k_1550954)
 2. [Does Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/description)
 3. [Count Subsets with sum K](https://www.naukri.com/code360/problems/number-of-subsets_3952532)
-4. [Minimum Removals to Achieve Target XOR](https://leetcode.com/problems/minimum-removals-to-achieve-target-xor/)
+4. [Minimum Removals to Achieve Target XOR](https://leetcode.com/problems/minimum-removals-to-achieve-target-xor/) [tricy]
 4. [Count Subsets with sum K with Negative numbers](https://www.naukri.com/code360/problems/number-of-subsets_3952532)
 5. [Count Partitions with given difference](https://www.naukri.com/code360/problems/partitions-with-given-difference_3751628)
 6. [Partition 2 Subset with minimum absolute sum difference]()
@@ -250,6 +254,8 @@ https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrom
 https://leetcode.com/problems/largest-divisible-subset/description/
 https://leetcode.com/problems/shortest-common-supersequence/description/
 https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/description/
+
+https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/
 
 
 Greedy also possible:

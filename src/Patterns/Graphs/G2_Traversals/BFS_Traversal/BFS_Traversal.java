@@ -43,8 +43,8 @@ public class BFS_Traversal extends ProblemSolver {
             List<Integer> neighbors = adjList.get(polledNode);
             for(int neighbor: neighbors) {
                 if(!vis.contains(neighbor)) {
-                    vis.add(neighbor);
                     queue.offer(neighbor);
+                    vis.add(neighbor);
                 }
             }
         }

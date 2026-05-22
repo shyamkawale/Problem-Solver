@@ -8,9 +8,13 @@ import java.util.Deque;
 import java.util.List;
 
 /*
-There are n servers for deploying applications. Server i can handle maximum max_req[i] requests, but currently has requests[i] requests to serve.
+There are n servers for deploying applications. 
+Server i can handle maximum max_req[i] requests, but currently has requests[i] requests to serve.
 
-To balance the load, some requests must be redirected between servers. The latency when redirecting from server i to server j is |i - j|. The goal is to find the minimum possible maximum latency (min-max latency) when redirecting requests optimally, ensuring no server exceeds its capacity.
+To balance the load, some requests must be redirected between servers. 
+The latency when redirecting from server i to server j is |i - j|. 
+The goal is to find the minimum possible maximum latency (min-max latency) when 
+redirecting requests optimally, ensuring no server exceeds its capacity.
 
 If it is impossible to serve all requests, return -1.
 
@@ -22,21 +26,16 @@ max_req = [2, 1, 5, 3]
 Optimal redirections:
 
 Redirect 2 requests from server 2 to server 3
-
 Redirect 1 request from server 4 to server 3
-
 Maximum latency = max(|2-3|, |4-3|) = 1
 The answer is 1.
 
 Function Description
 Complete the function getMinLatency in the editor with the following parameter(s):
-
 int requests[n]: the request counts currently assigned to each server
-
 int max_req[n]: the maximum number of requests each server can serve
 
 Returns
-
 int: The minimal max_latency possible respecting the given conditions
 */
 public class servers_problem extends ProblemSolver {

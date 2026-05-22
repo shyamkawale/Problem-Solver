@@ -1,4 +1,4 @@
-package Patterns.Intervals.Merge_Intervals;
+package Patterns.Intervals.int1_Merge_Intervals;
 
 import java.util.Arrays;
 import java.util.Stack;

@@ -7,7 +7,10 @@ import Helpers.DataStructure.Trees.TreeWrapper;
 /*
 https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
 
-Given two integer arrays, preorder and postorder where preorder is the preorder traversal of a binary tree of distinct values and postorder is the postorder traversal of the same tree, reconstruct and return the binary tree.
+Given two integer arrays, preorder and postorder where 
+preorder is the preorder traversal of a binary tree of distinct values and 
+postorder is the postorder traversal of the same tree, 
+reconstruct and return the binary tree.
 
 If there exist multiple answers, you can return any of them.
 */
@@ -19,10 +22,10 @@ public class Construct_Any_Tree_with_PreOrder_And_PostOrder extends ProblemSolve
 
     @Override
     public void processParameters(String[] args) {
-        int[] inOrder = DataConvertor.toIntArray(args[0]);
-        int[] levelOrder = DataConvertor.toIntArray(args[1]);
+        int[] preorder = DataConvertor.toIntArray(args[0]);
+        int[] postorder = DataConvertor.toIntArray(args[1]);
 
-        TreeNode root = constructFromPrePost(inOrder, levelOrder);
+        TreeNode root = constructFromPrePost(preorder, postorder);
         TreeWrapper.prettyPrintTree(root);
     }
 

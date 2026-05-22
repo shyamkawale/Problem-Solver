@@ -7,7 +7,7 @@
 
 3. [Max Customers In Restaurant](https://cses.fi/problemset/task/1619) [Max Overlapping Intervals]
 
-4. [Movie Festivals](https://cses.fi/problemset/task/1629) [Maximum Number of Non-Overlapping Intervals] 
+4. [Movie Festivals](https://cses.fi/problemset/task/1629) [Maximum Number of Non-Overlapping Intervals] [Activity Selection Problem]
     - https://leetcode.com/problems/maximum-length-of-pair-chain
 
 https://cses.fi/problemset/task/2168/ (Nested Ranges Check)

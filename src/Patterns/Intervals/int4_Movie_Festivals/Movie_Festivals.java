@@ -1,4 +1,4 @@
-package Patterns.Intervals.Movie_Festivals;
+package Patterns.Intervals.int4_Movie_Festivals;
 
 import java.util.Arrays;
 

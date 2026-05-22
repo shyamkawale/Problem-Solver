@@ -51,6 +51,7 @@ public class Minimum_Path_Sum extends ProblemSolver {
         PriorityQueue<int[]> queue = new PriorityQueue<>((a, b) -> a[2] - b[2]);
         queue.offer(new int[]{0, 0, grid[0][0]});
         dist[0][0] = grid[0][0];
+        boolean[][] vis = new boolean[row][col];
 
         int[][] dir = {{0, 1}, {1, 0}};
 
@@ -60,19 +61,20 @@ public class Minimum_Path_Sum extends ProblemSolver {
             int c = polledNode[1];
             int wt = polledNode[2];
 
+            if(vis[r][c]) {
+                continue;
+            }
+            vis[r][c] = true;
+
             if(r == row-1 && c == col-1) {
                 return wt;
-            }
-
-            if(dist[r][c] != wt) {
-                continue;
             }
 
             for(int i=0; i<dir.length; i++) {
                 int nr = r + dir[i][0];
                 int nc = c + dir[i][1];
 
-                if(isValid(nr, row) && isValid(nc, col)) {
+                if(isValid(nr, row) && isValid(nc, col) && !vis[nr][nc]) {
                     int nwt = grid[nr][nc];
 
                     if(dist[nr][nc] > wt + nwt) {

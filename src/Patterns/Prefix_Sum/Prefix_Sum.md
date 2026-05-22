@@ -150,6 +150,8 @@ End-Part = Start-Part
 
 12. [Maximum Frequency After Subarray Operation](https://leetcode.com/problems/maximum-frequency-after-subarray-operation/) [Freq Prefix] [Good Problem - try to do O(N)] # towrite 
 
+13. [](https://leetcode.com/problems/minimum-cost-to-move-between-indices/) [prefixSum and suffixSum] #towrite
+
 
 ## Does not look Prefix Sum
 

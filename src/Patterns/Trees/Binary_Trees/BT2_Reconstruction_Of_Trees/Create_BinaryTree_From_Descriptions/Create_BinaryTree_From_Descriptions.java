@@ -38,7 +38,7 @@ public class Create_BinaryTree_From_Descriptions extends ProblemSolver {
 
     private TreeNode createBinaryTree(int[][] description) {
         Map<Integer, TreeNode> nodeMap = new HashMap<>();
-        Set<Integer> childSet = new HashSet<>();
+        Set<Integer> childSet = new HashSet<>(); // to find out root of tree
 
         for (int[] desc : description) {
             int parent = desc[0];
@@ -65,6 +65,7 @@ public class Create_BinaryTree_From_Descriptions extends ProblemSolver {
             childSet.add(child);
         }
 
+        // finding out root of the tree
         for(int[] desc: description){
             if(!childSet.contains(desc[0])){
                 return nodeMap.get(desc[0]);

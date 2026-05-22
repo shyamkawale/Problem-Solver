@@ -1,9 +1,9 @@
-package Patterns.Intervals.Insert_Interval;
+package Patterns.Intervals.int2_Insert_Interval;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 import Helpers.DataConvertor;
 import Helpers.ProblemSolver;
@@ -59,14 +59,14 @@ public class Insert_Interval extends ProblemSolver {
         }
         list.add(newInterval);
 
-        Collections.sort(list, (int[] a, int[] b) -> a[0] - b[0]);
+        Collections.sort(list, (a, b) -> Integer.compare(a[0], b[0]));
 
-        LinkedList<int[]> res = new LinkedList<>();
+        Stack<int[]> res = new Stack<>();
         for (int i = 0; i < list.size(); i++) {
-            if (res.isEmpty() || res.getLast()[1] < list.get(i)[0]) {
-                res.add(list.get(i));
+            if (res.isEmpty() || res.peek()[1] < list.get(i)[0]) {
+                res.push(list.get(i));
             } else {
-                res.getLast()[1] = Math.max(res.getLast()[1], list.get(i)[1]);
+                res.peek()[1] = Math.max(res.peek()[1], list.get(i)[1]);
             }
         }
 

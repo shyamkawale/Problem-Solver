@@ -191,8 +191,8 @@ Types of Binary Tree
 
 ### Basic Problems
 
-1. [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) - Inline modify tree to linkedlist
-2. [Construct Inorder LinkedList](https://leetcode.com/problems/increasing-order-search-tree/) contruction of tree.
+1. [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) - Inline modify tree to linkedlist [#towrite]
+2. [Construct Inorder LinkedList](https://leetcode.com/problems/increasing-order-search-tree/) contruction of tree. [#towrite]
 
 ---
 
@@ -246,7 +246,7 @@ Types of Binary Tree
 
 1. [All Nodes Distance K](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/) 💡 ✅
 2. [Find Distance in BinaryTree](https://leetcode.com/problems/find-distance-in-a-binary-tree/) ✅ [`ParentMap + LCA/BFS`]
-3. [Good Leaf Nodes Pairs](https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/) [`ParentMap + DFS`]
+3. [Good Leaf Nodes Pairs](https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/) [`ParentMap + DFS`] [`Tree DP`]
 
 ```java
 private void constructParentMap(TreeNode root, Map<TreeNode, TreeNode> parentMap) {

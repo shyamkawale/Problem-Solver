@@ -11,8 +11,30 @@ import Helpers.ProblemSolver;
 import Helpers.DataStructure.Graphs.GraphsWrapper;
 
 /*
+https://leetcode.com/problems/find-eventual-safe-states/
 
+There is a directed graph of n nodes with each node labeled from 0 to n - 1. 
+The graph is represented by a 0-indexed 2D integer array graph where graph[i] is an integer array of nodes adjacent to node i, 
+meaning there is an edge from node i to each node in graph[i].
 
+A node is a terminal node if there are no outgoing edges. 
+A node is a safe node if every possible path starting from that node leads to a terminal node (or another safe node).
+
+Return an array containing all the safe nodes of the graph. 
+The answer should be sorted in ascending order.
+
+Example 1:
+Input: graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+Output: [2,4,5,6]
+Explanation: The given graph is shown above.
+Nodes 5 and 6 are terminal nodes as there are no outgoing edges from either of them.
+Every path starting at nodes 2, 4, 5, and 6 all lead to either node 5 or 6.
+
+Example 2:
+Input: graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+Output: [4]
+Explanation:
+Only node 4 is a terminal node, and every path starting at node 4 leads to node 4.
 */
 public class Find_Eventual_Safe_States extends ProblemSolver {
 
@@ -26,19 +48,19 @@ public class Find_Eventual_Safe_States extends ProblemSolver {
         int[][] edges = DataConvertor.to2DIntArray(args[1]);
         List<List<Integer>> adjList = GraphsWrapper.createDirectedGraph(n, edges);
 
-        List<Integer> res1 = findEventualSafeStates1(n, adjList);
-        List<Integer> res2 = findEventualSafeStates2(n, adjList);
-        List<Integer> res3 = findEventualSafeStates3(n, adjList);
+        List<Integer> res1 = findEventualSafeNodes1(n, adjList);
+        List<Integer> res2 = findEventualSafeNodes2(n, adjList);
+        List<Integer> res3 = findEventualSafeNodes3(n, adjList);
 
-        List<Integer> res4 = findEventualSafeStates4(n, adjList);
+        List<Integer> res4 = findEventualSafeNodes4(n, adjList);
         System.out.println(res1 + " " + res2 + " " + res3 + " " + res4);
     }
 
     // BFS Topological sort (Concept is important here- on why elements in topological sort list are our result)
-    private List<Integer> findEventualSafeStates4(int n, List<List<Integer>> adjList) {
+    private List<Integer> findEventualSafeNodes4(int n, List<List<Integer>> adjList) {
         List<Integer> res = new ArrayList<>();
         List<List<Integer>> adjListRev = new ArrayList<>();
-        int[] inDegree = new int[n];
+        int[] outDegree = new int[n];
         for(int i=0; i<n; i++) {
             adjListRev.add(new ArrayList<>());
         }
@@ -47,12 +69,12 @@ public class Find_Eventual_Safe_States extends ProblemSolver {
             for(int neighbor: adjList.get(i)) {
                 adjListRev.get(neighbor).add(i);
             }
-            inDegree[i] = adjList.get(i).size();
+            outDegree[i] = adjList.get(i).size();
         }
 
         Queue<Integer> queue = new ArrayDeque<>();
         for(int i=0; i<n; i++) {
-            if(inDegree[i] == 0) {
+            if(outDegree[i] == 0) {
                 queue.offer(i);
                 res.add(i);
             }
@@ -62,8 +84,8 @@ public class Find_Eventual_Safe_States extends ProblemSolver {
             int polledNode = queue.poll();
 
             for(int neighbor: adjListRev.get(polledNode)) {
-                inDegree[neighbor]--;
-                if(inDegree[neighbor] == 0) {
+                outDegree[neighbor]--;
+                if(outDegree[neighbor] == 0) {
                     queue.offer(neighbor);
                     res.add(neighbor);
                 }
@@ -74,7 +96,7 @@ public class Find_Eventual_Safe_States extends ProblemSolver {
         return res;
     }
 
-    private List<Integer> findEventualSafeStates1(int n, List<List<Integer>> adjList) {
+    private List<Integer> findEventualSafeNodes1(int n, List<List<Integer>> adjList) {
         List<Integer> res = new ArrayList<>();
 
         for(int i=0; i<n; i++) {
@@ -107,7 +129,7 @@ public class Find_Eventual_Safe_States extends ProblemSolver {
     }
 
 
-    private List<Integer> findEventualSafeStates2(int n, List<List<Integer>> adjList) {
+    private List<Integer> findEventualSafeNodes2(int n, List<List<Integer>> adjList) {
         List<Integer> res = new ArrayList<>();
         int[] vis = new int[n];
         int[] pathVis = new int[n];
@@ -145,7 +167,7 @@ public class Find_Eventual_Safe_States extends ProblemSolver {
     }
 
 
-    private List<Integer> findEventualSafeStates3(int n, List<List<Integer>> adjList) {
+    private List<Integer> findEventualSafeNodes3(int n, List<List<Integer>> adjList) {
         List<Integer> res = new ArrayList<>();
 
         // 0 = unvisited, 1 = visited unsafe, 2 = visited safe

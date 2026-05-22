@@ -55,6 +55,7 @@ public class Prims_Algorithm extends ProblemSolver {
                 continue;
             }
             vis[currNode] = 1;
+            
             mstWeight = mstWeight + weight;
             mstEdges.add(new int[]{currNode, parentNode});
 

@@ -84,7 +84,7 @@ public class PostOrder_Traversal extends ProblemSolver {
         TreeNode curr = root;
         TreeNode lastVisited = null; // for right(i.e we went there for seeking right - tya right la jaun alo aahe apan)
 
-        while (curr != null || !stack.isEmpty()) {
+        while (!stack.isEmpty() || curr != null) {
             while (curr != null) {
                 stack.push(curr);
                 curr = curr.left; // Move to left subtree first

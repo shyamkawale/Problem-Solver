@@ -6,7 +6,10 @@ import Helpers.Models.BinarySearchResult;
 
 /*
 https://leetcode.com/problems/single-element-in-a-sorted-array/
-You are given a sorted array consisting of only integers where every element appears exactly **twice**, except for one element which appears exactly once.
+You are given a sorted array consisting of only integers 
+where every element appears exactly **twice**, 
+except for one element which appears exactly once.
+
 Return the single element that appears only once.
 
 Your solution must run in O(log n) time and O(1) space.
@@ -42,24 +45,25 @@ public class Single_Element_in_a_Sorted_Array extends ProblemSolver {
     }
 
     public int singleNonDuplicate2(int[] nums) {
-        int i=0;
-        int cnt = 0;
+        int len = nums.length;
+        int start = 0;
+        int end = 0;
 
-        for(int j=0; j<nums.length; j++){
-            if(nums[i] == nums[j]){
-                cnt++;
+        while(end < len) {
+            if(nums[start] != nums[end]) {
+                if(start+1 == end) {
+                    return nums[start];
+                }
+                else {
+                    start = end;
+                }
             }
-            else{
-                return nums[i];
-            }
-
-            if(cnt == 2){
-                i=j+1;
-                cnt=0;
+            else {
+                end++;
             }
         }
 
-        return nums[i];
+        return nums[len-1];
     }
 
     public int singleNonDuplicate3(int[] nums) {

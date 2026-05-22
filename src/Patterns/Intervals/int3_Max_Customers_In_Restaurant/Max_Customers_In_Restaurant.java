@@ -1,4 +1,4 @@
-package Patterns.Intervals.Max_Customers_In_Restaurant;
+package Patterns.Intervals.int3_Max_Customers_In_Restaurant;
 
 import java.util.ArrayList;
 import java.util.Collections;

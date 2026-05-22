@@ -338,11 +338,6 @@ Problem Types:
                   +1+
 ```
 
-## [Detect Cycle in Undirected Graph](https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1)
-    1. Using DFS
-    2. Using BFS
-
-
 ### Matrix Graph Problems
 
 1. [Flood Fill](https://leetcode.com/problems/flood-fill) **[BFS]**
@@ -353,6 +348,11 @@ Problem Types:
 
 7. [As Far From Land As Possible](https://leetcode.com/problems/as-far-from-land-as-possible/) [easy]
 
+https://leetcode.com/problems/path-with-maximum-gold/
+
+## [Detect Cycle in Undirected Graph](https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1)
+    1. Using DFS
+    2. Using BFS
 
 ## Bipartite Graph
 - Color the graph with 2 colors such that no adjacent nodes has same color (Generally used for Undirected Graph).
@@ -463,6 +463,14 @@ Word Ladder 2
 
 3. Using Set (Greedy BFS Algorithm)
 
+/**************************************************
+Don't get confuse with all variance of Dijktras...
+Use this rule:
+
+1. Any Graph is Unweighted -> Use BFS
+2. Any Graph is +ve Weighted -> Use Classical Dijiktras
+/**************************************************
+
 Does not work with -ve Edges. WHY ??
 - Dijkstra marks a node as "done" once popped from PQ, assuming its shortest path is finalized.
 - With -ve edges, a later path through a negative edge could give a shorter distance to an already "done" node.
@@ -487,17 +495,14 @@ PS. for dense graph E = V^2 but this above TC is generalized for worst case for 
 
 PS. also for TreeSet solution (Theoretical / Decrease-Key Djiktras Version) we remove element from set at most V times but could endup removing, adding both in set E times for relaxation therefore there TC is O(VlogV + 2*ElogV) which can be generalized with (V+E)*logV.
 
-## Print Shortest Path between first node 0 to last node n
-
-- Dijktras Algo + I have to remember from where I have been coming from...
-
 
 Problem:
-1. [Shortest path in a binary maze](https://leetcode.com/problems/shortest-path-in-binary-matrix/) [BFS+Queue] [why dist array is not required]
+1. [Print Shortest Path](https://takeuforward.org/plus/dsa/problems/print-shortest-path-) [Dijktras Algo + I have to remember from where I have been coming from]
+1. [Shortest path in a binary maze](https://leetcode.com/problems/shortest-path-in-binary-matrix/) [Normal BFS + Queue]
 2. [Path with Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort/)
 3. [Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
 4. [Network Delay Time](https://leetcode.com/problems/network-delay-time/)
-5. [Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/)
+5. [Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/) [tricky]
 
 
 -ve Cycles = Cycle where Path weight is -ve.
@@ -505,14 +510,13 @@ Problem:
 
 ## Bellman Ford Algorithm
 
-- Uses edges array.
-- Works with -ve edges. WHY ??
-- Detect -ve cycles HOW & WHY ??
-- works only for Directed Graph
-    - for Undirected Graph -> convert it to Directed Graph WHY ??
-
-we have to Relax All edges V-1 times sequentially. WHY ??
-
+- Works with -ve edges.
+    - Why: becoz because it does NOT assume any distance is final until all possibilities are explored. (Basically it is not greedy, Bellman is Bruteforce - tries with relaxation N-1 times)
+- Detect -ve cycles.
+- Uses `int[][] edges` array instead of Adjacency list.
+- Perfectly works with Directed Graph even with -ve edges
+- Undirected Graph with +ve edges => add reverse edges as well in `int[][] edges` array.
+- Undirected Graph with -ve edges => not possible as it has -ve cycle.
 
 
 ## Floyd Warshall Algorithm

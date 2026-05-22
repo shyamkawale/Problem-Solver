@@ -102,7 +102,7 @@ public class Find_Topological_Sort extends ProblemSolver {
             int polledNode = queue.poll();
 
             for (int neighbor : adjList.get(polledNode)) {
-                inDeg[neighbor]--; // (ek baar idhar jake aye toh iska indegree kam karo.. dependency ek se kam karo..)
+                inDeg[neighbor]--; // (ek baar idhar jake aaye, toh iska indegree kam karo.. dependency ek se kam karo..) -> neighbor ki ek dependency kam hui.
                 if (inDeg[neighbor] == 0) {
                     queue.offer(neighbor); // indegree became 0, so now we can add in the result (kyuki koi dependency nhi hai abhi)
                 }

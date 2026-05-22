@@ -119,7 +119,8 @@ public class Find_SortestPath_in_DAG extends ProblemSolver {
         return dist;
     }
 
-    // Dijkstra's Algorithm (PriorityQueue)
+    // Not Classical Dijkstra's Algorithm (PriorityQueue)
+    // Becoz Dijiktras Algorithm says: "Once a node is popped → it is finalized -> shortest dist for that node is found" 
     // Works for: DAG, Cyclic graphs with NON-NEGATIVE weights only
     // TC: O((V + E) * log V) -> log V for each heap operation
     // SC: O(V) for dist + O(V) for priority queue

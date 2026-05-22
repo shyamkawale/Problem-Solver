@@ -12,6 +12,20 @@ import Helpers.ProblemSolver;
 import Helpers.DataStructure.Graphs.GraphsWrapper;
 import Helpers.DataStructure.Graphs.Pair;
 
+/*
+https://takeuforward.org/plus/dsa/problems/print-shortest-path-
+
+Given a weighted undirected graph having n vertices numbered from 1 to n and m edges describing there are edges, 
+where edges[i]=[ai,bi,wi], representing an edge from vertex ai to bi with weight wi.
+
+Find the shortest path between the vertex 1 and the vertex n and if path does not exist then return a list consisting of only -1.
+
+If there exists a path, then return a list whose first element is the weight of the path and 
+the remaining elements represent the shortest path from vertex 1 to vertex n.
+
+Input: n = 5, edges = [[1,2,2], [2,5,5], [2,3,4], [1,4,1],[4,3,3],[3,5,1]]
+Output: 5 1 4 3 5
+*/
 public class Print_ShortestPath extends ProblemSolver {
 
     public static void main(String[] args) {
@@ -41,26 +55,28 @@ public class Print_ShortestPath extends ProblemSolver {
         Arrays.fill(parent, -1);
         parent[srcNode] = srcNode;
 
-        Queue<int[]> queue = new PriorityQueue<>((a, b) -> a[1] - b[1]);
+        Queue<int[]> queue = new PriorityQueue<>((a, b) -> Integer.compare(a[1], b[1]));
         queue.offer(new int[] { srcNode, 0 });
+
+        boolean[] vis = new boolean[n];
 
         while (!queue.isEmpty()) {
             int[] polledNode = queue.poll();
             int currNode = polledNode[0];
             int currWeight = polledNode[1];
 
+            if(vis[currNode]) continue;
+            vis[currNode] = true;
+
             if(currNode == destNode) {
                 break;
-            }
-            if(currWeight > dist[currNode]) {
-                continue;
             }
 
             for (Pair<Integer, Integer> neighbor : adjList.get(currNode)) {
                 int neighborNode = neighbor.vertex;
                 int weight = neighbor.weight;
 
-                if (dist[neighborNode] > currWeight + weight) {
+                if (!vis[neighborNode] && dist[neighborNode] > currWeight + weight) {
                     dist[neighborNode] = currWeight + weight;
                     queue.offer(new int[] { neighborNode, dist[neighborNode] });
                     parent[neighborNode] = currNode;

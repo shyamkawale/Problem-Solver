@@ -140,11 +140,12 @@ public class Design5_MinStack {
         }
 
         public void pop() {
-            int topElem = stack.peek();
+            if(stack.isEmpty()) return;
+
+            int topElem = stack.pop();
             if(topElem < minElem){ // modified(hashed) top
                 minElem = getHash(minElem, topElem);
             }
-            stack.pop();
         }
 
         public int top() {

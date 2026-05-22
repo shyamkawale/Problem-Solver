@@ -47,7 +47,7 @@
     4. Remove Element At Position
     5. Remove Last Element
     6. Remove Node
-    7. [Remove Kth Node From Last](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+    7. [Remove Kth Node From Last](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) [1 Pass Solution 🔥]
     8. [Check if Palindrome](https://leetcode.com/problems/palindrome-linked-list/)
     9. Reverse List Between Left and Right (Both Included)
     10. [Reverse LinkedList in Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) #TODO 📅
@@ -92,6 +92,10 @@
 ## Techniques
 
 1. Hare and Tortoise Method(Slow and fast pointer)
+> Hare and Tortoise Solution: One Pass Solution
+> mid = left + Math.floor((right-left)/2);
+> Odd List:  [1, 2, 3*, 4, 5]  ===> mid is 3  (slow is at middle(3), fast is at tail(5))
+> Even List: [1, 2, 3*, 4]     ===> mid is 3  (slow is at middle(3), fast is at null)
 2. Recursion in LinkedList
 3. DummyNode Concept (when returning new List)
 4. Length Difference for finding intersection of LinkedList

@@ -125,10 +125,10 @@ public class Check_Operations_on_BinaryTree extends ProblemSolver {
         }
     
         int leftHeight = heightWithBalanceChecking(root.left);
-        if (leftHeight == -1) return -1; // Unbalanced
+        if (leftHeight == -1) return -1; // left Subtree is Unbalanced
     
         int rightHeight = heightWithBalanceChecking(root.right);
-        if (rightHeight == -1) return -1; // Unbalanced
+        if (rightHeight == -1) return -1; // Right Subtree is Unbalanced
     
         if (Math.abs(leftHeight - rightHeight) > 1) {
             return -1; // Mark as unbalanced
